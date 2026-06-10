@@ -2,8 +2,7 @@
 //  SLIDE CONTENT COMPONENTS
 // ─────────────────────────────────────────────────────────────
 import {
-  Building2, MapPin, BookOpen, Landmark, ClipboardList, Calendar,
-  Shield, Layers, UserPlus, GraduationCap,
+  Building2, MapPin, BookOpen, Landmark, ClipboardList, Calendar, Layers, UserPlus, GraduationCap,
 } from 'lucide-react'
 
 // ── S01 TITLE ────────────────────────────────────────────────
@@ -57,7 +56,7 @@ export function S02_Outline() {
   return (
     <div className="slide-inner">
       <div className="slide-heading anim-fade-up">Presentation Outline</div>
-      <h2 className="slide-title-h anim-fade-up delay-1">60-Minute Roadmap</h2>
+      <h2 className="slide-title-h anim-fade-up delay-1">Roadmap</h2>
       <div className="grid-2 slide-body anim-fade-up delay-2" style={{ gap:10, overflow:'hidden' }}>
         {secs.map((s) => (
           <div key={s.n} className="card" style={{ padding:'14px 18px', display:'flex', alignItems:'center', gap:14 }}>
