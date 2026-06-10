@@ -11,10 +11,7 @@ import kennethPhoto from '../assets/kenneth pogi.png'
 // ── S01 TITLE ────────────────────────────────────────────────
 export function S01_Title() {
   return (
-    <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'40px', textAlign:'center', position:'relative' }}>
-      <div style={{ position:'absolute', width:280, height:280, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.15)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
-      <div style={{ position:'absolute', width:400, height:400, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.08)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
-
+    <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'40px', textAlign:'center', position:'relative', zIndex:1 }}>
       <div className="title-badge anim-scale-in">
         <img src={proctorLogo} alt="SEN-GEN Logo" style={{ width:'100%', height:'100%', objectFit:'contain', borderRadius:16, padding:8 }} />
       </div>

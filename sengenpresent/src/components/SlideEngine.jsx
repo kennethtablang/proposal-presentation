@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { slides } from '../slides/index.js'
+import SlideBackground from './SlideBackground.jsx'
 import {
   S01_Title, S02_Outline, S03_Researcher, S04_Context,
   S06_CoreProblem, S07_PhHEI, S08_WalkIn, S09_ManualSched,
@@ -29,6 +30,7 @@ function TitleSlide({ slide }) {
   const Content = CONTENT_MAP[slide.id]
   return (
     <div className="slide slide-title">
+      <SlideBackground />
       <div className="slide-accent-bar" />
       {Content ? <Content /> : <GenericContent slide={slide} />}
     </div>
@@ -39,11 +41,7 @@ function DividerSlide({ slide }) {
   const nums = { '01':'01','02':'02','03':'03','04':'04','05':'05','06':'06','07':'07','08':'08' }
   return (
     <div className="slide slide-divider">
-      <div style={{ position:'absolute', inset:0, overflow:'hidden', pointerEvents:'none' }}>
-        <div style={{ position:'absolute', width:300, height:300, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.1)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
-        <div style={{ position:'absolute', width:440, height:440, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.06)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
-        <div style={{ position:'absolute', width:580, height:580, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.04)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
-      </div>
+      <SlideBackground />
       <div style={{ zIndex:1, padding:40, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%' }}>
         <div className="anim-scale-in" style={{ width:110, height:110, borderRadius:28, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:52, fontWeight:800, color:'#fff', marginBottom:28, boxShadow:'0 12px 40px rgba(105,154,205,0.35)' }}>
           {nums[slide.section]}
@@ -63,6 +61,7 @@ function ContentSlide({ slide }) {
   const Content = CONTENT_MAP[slide.id] || (() => <GenericContent slide={slide} />)
   return (
     <div className="slide">
+      <SlideBackground />
       <div className="slide-accent-bar" />
       <Content />
     </div>
@@ -82,6 +81,7 @@ function ClosingSlide() {
   ]
   return (
     <div className="slide slide-title" style={{ justifyContent:'flex-start' }}>
+      <SlideBackground />
       <div className="slide-accent-bar" />
       <div style={{ zIndex:1, display:'flex', flexDirection:'column', height:'100%', padding:'28px 36px' }}>
         <div className="anim-fade-up" style={{ fontSize:20, fontWeight:700, letterSpacing:2, color:'rgba(228,183,149,0.7)', textTransform:'uppercase', marginBottom:8 }}>Research Summary</div>
