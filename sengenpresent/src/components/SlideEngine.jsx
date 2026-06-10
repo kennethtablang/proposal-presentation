@@ -89,13 +89,13 @@ function ClosingSlide() {
         <div className="anim-fade-up delay-2" style={{ fontSize:24, color:'rgba(255,255,255,0.5)', marginBottom:20 }}>Student Enlistment with Generative Scheduling System for STI Alaminos</div>
         <div className="anim-fade-up delay-2" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, flex:1, overflow:'hidden' }}>
           {summary.map((s,i) => (
-            <div key={i} style={{ display:'flex', gap:10, alignItems:'flex-start', padding:'10px 12px', background:'rgba(255,255,255,0.04)', borderRadius:8, border:'1px solid rgba(255,255,255,0.07)' }}>
+            <div key={i} style={{ display:'flex', gap:10, alignItems:'flex-start', padding:'10px 12px', background:'rgba(255,255,255,0.07)', borderRadius:8, border:'1px solid rgba(255,255,255,0.13)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', boxShadow:'inset 0 1px 0 rgba(255,255,255,0.08)' }}>
               <div style={{ width:16, height:16, borderRadius:4, background:'var(--brand-gradient)', flexShrink:0, marginTop:4 }} />
               <div style={{ fontSize:20, color:'rgba(255,255,255,0.7)', lineHeight:1.5 }}>{s}</div>
             </div>
           ))}
         </div>
-        <div className="anim-fade-up delay-3" style={{ marginTop:16, padding:'16px 22px', background:'rgba(255,255,255,0.05)', borderRadius:10, border:'1px solid rgba(105,154,205,0.2)' }}>
+        <div className="anim-fade-up delay-3" style={{ marginTop:16, padding:'16px 22px', background:'rgba(105,154,205,0.10)', borderRadius:10, border:'1px solid rgba(105,154,205,0.28)', backdropFilter:'blur(16px)', WebkitBackdropFilter:'blur(16px)', boxShadow:'inset 0 1px 0 rgba(255,255,255,0.09)' }}>
           <div style={{ fontSize:22, fontStyle:'italic', color:'rgba(255,255,255,0.6)', lineHeight:1.7, marginBottom:10 }}>
             "SEN-GEN is not merely a technological upgrade — it is an instrument of academic quality, institutional efficiency, and student-centered service delivery."
           </div>

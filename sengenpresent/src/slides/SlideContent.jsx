@@ -23,20 +23,20 @@ export function S01_Title() {
         <h1 style={{ fontSize:80, fontWeight:800, color:'#fff', lineHeight:1.1, marginBottom:10, letterSpacing:-2 }}>
           SEN-GEN
         </h1>
-        <p style={{ fontSize:30, fontWeight:400, color:'rgba(255,255,255,0.7)', marginBottom:6 }}>
+        <p style={{ fontSize:38, fontWeight:600, background:'linear-gradient(135deg, #e4b795, #699acd)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', marginBottom:4  }}>
           Student Enlistment with
         </p>
-        <p style={{ fontSize:38, fontWeight:600, background:'linear-gradient(135deg, #e4b795, #699acd)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', marginBottom:32 }}>
+        <p style={{ fontSize:38, fontWeight:600, background:'linear-gradient(135deg, #e4b795, #699acd)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', marginBottom:4 }}>
           Generative Scheduling System
         </p>
-        <p style={{ fontSize:24, color:'rgba(255,255,255,0.5)', marginBottom:4 }}>for STI Alaminos</p>
+        <p style={{ fontSize:38, fontWeight:600, background:'linear-gradient(135deg, #e4b795, #699acd)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', marginBottom:4  }}>for STI Alaminos</p>
       </div>
 
       <div className="anim-fade-up delay-2" style={{ borderTop:'1px solid rgba(255,255,255,0.12)', paddingTop:24, marginTop:10, width:'100%', maxWidth:560 }}>
         <p style={{ fontSize:20, color:'rgba(255,255,255,0.45)', marginBottom:6 }}>Researcher / Developer</p>
         <p style={{ fontSize:26, fontWeight:600, color:'rgba(255,255,255,0.85)' }}>Kenneth Rey Rallustian Tablang</p>
         <p style={{ fontSize:20, color:'rgba(255,255,255,0.4)', marginTop:6 }}>
-          Adviser: Rochelle Sotelo Lanto, MIT &nbsp;·&nbsp; April 2026
+          Adviser: Rochelle Sotelo Lanto, MIT &nbsp;·&nbsp; June 2026
         </p>
       </div>
     </div>
@@ -218,7 +218,7 @@ export function S08_WalkIn() {
       <h2 className="slide-title-h anim-fade-up delay-1" style={{ fontSize:44 }}>Walk-In Enlistment Flow (As-Is)</h2>
       <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {steps.map((s,i) => (
-          <div key={i} style={{ display:'flex', gap:14, padding:'11px 14px', background:'var(--bg-card)', borderRadius:8, border:'1px solid var(--border)', alignItems:'flex-start' }}>
+          <div key={i} className="glass-row" style={{ display:'flex', gap:14, padding:'11px 14px', alignItems:'flex-start' }}>
             <div style={{ width:32, height:32, borderRadius:8, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:700, color:'#fff', flexShrink:0, marginTop:2 }}>{s.n}</div>
             <div style={{ flex:1 }}>
               <div style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)', lineHeight:1.4 }}>{s.act}</div>
@@ -247,7 +247,7 @@ export function S09_ManualSched() {
       <h2 className="slide-title-h anim-fade-up delay-1" style={{ fontSize:44 }}>Manual Schedule Construction (As-Is)</h2>
       <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {steps.map((s,i) => (
-          <div key={i} style={{ display:'flex', gap:14, padding:'11px 14px', background:'var(--bg-card)', borderRadius:8, border:'1px solid var(--border)', alignItems:'flex-start' }}>
+          <div key={i} className="glass-row" style={{ display:'flex', gap:14, padding:'11px 14px', alignItems:'flex-start' }}>
             <div style={{ width:32, height:32, borderRadius:8, background:'linear-gradient(135deg,#e4b795,#d97706)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:700, color:'#fff', flexShrink:0, marginTop:2 }}>{s.n}</div>
             <div style={{ flex:1 }}>
               <div style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)', lineHeight:1.4 }}>{s.act}</div>
@@ -409,7 +409,7 @@ export function S15_Scope() {
           </div>
         </div>
         <div className="card" style={{ padding:0, overflow:'hidden' }}>
-          <div style={{ background:'var(--bg-card-alt)', color:'var(--text-muted)', padding:'12px 16px', fontSize:22, fontWeight:700 }}>○ Deliberate Limitations</div>
+          <div style={{ background:'var(--glass-card-alt)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', color:'var(--text-muted)', padding:'12px 16px', fontSize:22, fontWeight:700 }}>○ Deliberate Limitations</div>
           <div style={{ padding:'14px 16px', display:'flex', flexDirection:'column', gap:12 }}>
             {outScope.map((t,i) => (
               <div key={i}>
@@ -476,7 +476,7 @@ export function S20_CSP() {
       </div>
       <div className="slide-body anim-fade-up delay-3" style={{ overflow:'hidden', display:'flex', flexDirection:'column', gap:8 }}>
         {evidence.map((e,i) => (
-          <div key={i} style={{ display:'flex', gap:12, padding:'10px 14px', background:'var(--bg-card)', borderRadius:8, border:'1px solid var(--border)', alignItems:'center' }}>
+          <div key={i} className="glass-row" style={{ display:'flex', gap:12, padding:'10px 14px', alignItems:'center' }}>
             <div style={{ fontSize:20, fontWeight:700, color:'var(--text-muted)', width:200, flexShrink:0 }}>{e.src}</div>
             <div style={{ fontSize:22, color:'var(--text-secondary)' }}>{e.f}</div>
           </div>
@@ -515,7 +515,7 @@ export function S22_ISOBenchmarks() {
         </table>
       </div>
       <div className="slide-body anim-fade-up delay-3" style={{ display:'flex', flexDirection:'column', gap:10 }}>
-        <div style={{ background:'var(--divider-bg)', borderRadius:12, padding:'18px 22px', display:'flex', alignItems:'center', gap:18 }}>
+        <div className="glass-dark" style={{ padding:'18px 22px', display:'flex', alignItems:'center', gap:18 }}>
           <div>
             <div style={{ fontSize:20, fontWeight:700, color:'rgba(255,255,255,0.5)', textTransform:'uppercase', letterSpacing:1, marginBottom:4 }}>SEN-GEN Target</div>
             <div style={{ fontSize:60, fontWeight:800, background:'var(--brand-gradient)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>≥ 4.00</div>
@@ -589,7 +589,7 @@ export function S31_Respondents() {
           </div>
         ))}
       </div>
-      <div className="slide-body anim-fade-up delay-4" style={{ background:'var(--divider-bg)', borderRadius:12, padding:'16px 20px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+      <div className="slide-body glass-dark anim-fade-up delay-4" style={{ padding:'16px 20px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
         <div style={{ fontSize:28, fontWeight:700, color:'rgba(255,255,255,0.9)' }}>Total Respondents: <span style={{ fontSize:52, background:'var(--brand-gradient)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>45</span></div>
         <div style={{ fontSize:21, color:'rgba(255,255,255,0.5)', maxWidth:420, lineHeight:1.6 }}>Instrument validated: 3 IT experts → pilot test (n=5) → Cronbach's alpha ≥ 0.70 → full administration</div>
       </div>
@@ -648,11 +648,11 @@ export function S36_Engine() {
         <div className="card" style={{ borderColor:'var(--chip-teal-t)' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'var(--chip-teal-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Soft Constraints</div>
           {['Faculty time preferences honored','Minimized idle gaps between classes','Equitable load distribution'].map((t,i) => <div key={i} style={{ fontSize:22, color:'var(--text-secondary)', paddingLeft:16, position:'relative', marginBottom:5 }}><span style={{ position:'absolute', left:0, color:'var(--chip-teal-t)' }}>◎</span>{t}</div>)}
-          <div style={{ marginTop:14, fontSize:21, fontWeight:700, color:'var(--chip-amber-t)', background:'var(--chip-amber)', borderRadius:8, padding:'10px 12px' }}>
+          <div style={{ marginTop:14, fontSize:21, fontWeight:700, color:'var(--chip-amber-t)', background:'var(--chip-amber)', borderRadius:8, padding:'10px 12px', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)', border:'1px solid rgba(217,119,6,0.25)' }}>
             Manual Override — Academic Head can override any assignment. Real-time conflict detection active. Validated: Zhou (2025) — ~12% overrides needed in real-world deployments.
           </div>
         </div>
-        <div className="card" style={{ background:'var(--divider-bg)', border:'none' }}>
+        <div className="card glass-dark" style={{ border:'none' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'rgba(255,255,255,0.5)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Results (Literature)</div>
           <div style={{ fontSize:52, fontWeight:800, background:'var(--brand-gradient)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', marginBottom:4 }}>100%</div>
           <div style={{ fontSize:19, color:'rgba(255,255,255,0.5)', marginBottom:14 }}>Hard constraints satisfied</div>
@@ -679,7 +679,7 @@ export function S39_NotifRBAC() {
           <div style={{ fontSize:19, fontWeight:700, color:'var(--g2)', textTransform:'uppercase', letterSpacing:1, marginBottom:12 }}>Automated Email Notifications</div>
           <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
             {events.map((e,i) => (
-              <div key={i} style={{ display:'flex', alignItems:'center', gap:10, padding:'8px 12px', background:'var(--bg-card-alt)', borderRadius:8 }}>
+              <div key={i} className="glass-item" style={{ display:'flex', alignItems:'center', gap:10, padding:'8px 12px' }}>
                 <div style={{ width:10, height:10, borderRadius:'50%', background:'var(--brand-gradient)', flexShrink:0 }} />
                 <div style={{ fontSize:22, color:'var(--text-secondary)' }}>{e}</div>
               </div>
@@ -693,7 +693,7 @@ export function S39_NotifRBAC() {
           <div style={{ fontSize:19, fontWeight:700, color:'var(--g3)', textTransform:'uppercase', letterSpacing:1, marginBottom:12 }}>Role-Based Access Control</div>
           <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
             {roles.map((r,i) => (
-              <div key={i} style={{ display:'flex', alignItems:'center', gap:10, padding:'8px 12px', background:'var(--bg-card-alt)', borderRadius:8 }}>
+              <div key={i} className="glass-item" style={{ display:'flex', alignItems:'center', gap:10, padding:'8px 12px' }}>
                 <div style={{ width:32, height:32, borderRadius:8, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:16, fontWeight:700, color:'#fff', flexShrink:0 }}>{i+1}</div>
                 <div style={{ fontSize:22, color:'var(--text-secondary)', fontWeight:500 }}>{r}</div>
               </div>
