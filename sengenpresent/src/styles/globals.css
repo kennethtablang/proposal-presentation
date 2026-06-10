@@ -341,26 +341,55 @@ body { font-family: 'Poppins', sans-serif; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 6px 16px;
   flex-shrink: 0;
   z-index: 10;
+  min-height: 44px;
 }
 .topbar-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-size: 11px;
   color: var(--text-muted);
   font-weight: 400;
+  overflow: hidden;
+  min-width: 0;
 }
-.topbar-sep { opacity: 0.4; }
-.topbar-section { font-weight: 600; color: var(--text-secondary); }
+.topbar-brand { font-weight: 700; color: var(--text-secondary); white-space: nowrap; }
+.topbar-sep   { opacity: 0.35; flex-shrink: 0; }
+.topbar-section { font-weight: 600; color: var(--text-secondary); white-space: nowrap; flex-shrink: 0; }
 
-.topbar-right { display: flex; align-items: center; gap: 8px; }
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.topbar-counter {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 36px;
+  text-align: center;
+  white-space: nowrap;
+}
+.topbar-total { color: var(--text-muted); font-weight: 400; }
+
+.topbar-hide-sm { /* hidden on small screens via media query */ }
 .icon-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
   border: 1px solid var(--border);
   background: var(--bg-card);
   display: flex;
@@ -368,9 +397,13 @@ body { font-family: 'Poppins', sans-serif; }
   justify-content: center;
   cursor: pointer;
   color: var(--text-secondary);
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+  flex-shrink: 0;
 }
-.icon-btn:hover { background: var(--bg-overlay); border-color: var(--border-strong); color: var(--text-primary); }
+.icon-btn:hover:not(:disabled) { background: var(--bg-overlay); border-color: var(--border-strong); color: var(--text-primary); }
+.icon-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.nav-btn { background: transparent; border-color: transparent; }
+.nav-btn:hover:not(:disabled) { background: var(--bg-overlay); border-color: var(--border); }
 
 /* ─── SLIDE AREA ─────────────────────────────────────────── */
 .slide-area {
@@ -475,9 +508,14 @@ body { font-family: 'Poppins', sans-serif; }
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s, background 0.22s;
 }
-.card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
+.card:hover {
+  border-color: var(--g2);
+  box-shadow: 0 0 0 1px rgba(105,154,205,0.25), var(--shadow-md);
+  transform: translateY(-2px);
+  background: var(--bg-card);
+}
 .card-alt { background: var(--bg-card-alt); }
 
 /* Problem cards */
@@ -489,9 +527,13 @@ body { font-family: 'Poppins', sans-serif; }
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
 }
-.problem-card:hover { transform: translateY(-1px); }
+.problem-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 1px rgba(105,154,205,0.2), var(--shadow-md);
+}
 
 .prob-num {
   width: 28px;
@@ -525,6 +567,12 @@ body { font-family: 'Poppins', sans-serif; }
   border-radius: 12px;
   padding: 18px 16px;
   text-align: center;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+.stat-card:hover {
+  border-color: var(--g2);
+  box-shadow: 0 0 0 1px rgba(105,154,205,0.25), var(--shadow-md);
+  transform: translateY(-3px);
 }
 .stat-num {
   font-size: 60px;
@@ -670,19 +718,16 @@ body { font-family: 'Poppins', sans-serif; }
 
 /* ─── SLIDE: TITLE SCREEN ────────────────────────────────── */
 .title-badge {
-  width: 80px;
-  height: 80px;
-  border-radius: 22px;
+  width: 130px;
+  height: 130px;
+  border-radius: 28px;
   background: var(--brand-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -1px;
+  overflow: hidden;
   margin: 0 auto 24px;
-  box-shadow: 0 8px 32px rgba(105,154,205,0.4);
+  box-shadow: 0 8px 40px rgba(105,154,205,0.45), 0 0 0 4px rgba(105,154,205,0.15);
 }
 
 /* ─── FEATURE STEP ───────────────────────────────────────── */
@@ -776,6 +821,12 @@ body { font-family: 'Poppins', sans-serif; }
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 12px;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+.role-card:hover {
+  border-color: var(--g2);
+  box-shadow: 0 0 0 1px rgba(105,154,205,0.25), var(--shadow-md);
+  transform: translateY(-2px);
 }
 .role-icon {
   width: 36px;
@@ -798,6 +849,7 @@ body { font-family: 'Poppins', sans-serif; }
 @keyframes fade-up   { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
 @keyframes fade-in   { from { opacity:0; } to { opacity:1; } }
 @keyframes scale-in  { from { opacity:0; transform:scale(0.96); } to { opacity:1; transform:scale(1); } }
+@keyframes card-enter { from { opacity:0; transform:translateY(16px) scale(0.97); } to { opacity:1; transform:none; } }
 
 .anim-fade-up  { animation: fade-up  0.5s cubic-bezier(0.16,1,0.3,1) both; }
 .anim-fade-in  { animation: fade-in  0.4s ease both; }
@@ -811,11 +863,66 @@ body { font-family: 'Poppins', sans-serif; }
 .delay-6 { animation-delay: 0.48s; }
 .delay-7 { animation-delay: 0.56s; }
 
+/* ─── CARD STAGGER ───────────────────────────────────────── */
+.card-stagger > * {
+  animation: card-enter 0.44s cubic-bezier(0.16,1,0.3,1) both;
+}
+.card-stagger > *:nth-child(1)  { animation-delay: 0.18s; }
+.card-stagger > *:nth-child(2)  { animation-delay: 0.26s; }
+.card-stagger > *:nth-child(3)  { animation-delay: 0.34s; }
+.card-stagger > *:nth-child(4)  { animation-delay: 0.42s; }
+.card-stagger > *:nth-child(5)  { animation-delay: 0.50s; }
+.card-stagger > *:nth-child(6)  { animation-delay: 0.58s; }
+.card-stagger > *:nth-child(7)  { animation-delay: 0.66s; }
+.card-stagger > *:nth-child(8)  { animation-delay: 0.74s; }
+
+/* ─── FRAMEWORK PLACEHOLDER ──────────────────────────────── */
+.framework-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--border-strong);
+  border-radius: 16px;
+  background: var(--bg-card-alt);
+  padding: 32px;
+  text-align: center;
+}
+.framework-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 50; box-shadow: var(--shadow-lg); }
-  .slide-area { padding: 6px 8px; }
-  .slide-inner { padding: 20px 20px 16px; }
+  .slide-area { padding: 4px 6px; }
+  .topbar { padding: 4px 10px; min-height: 38px; }
+  .topbar-hide-sm { display: none !important; }
+  .slide-inner { padding: 16px 16px 12px; gap: 10px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .topbar { padding: 4px 8px; }
+  .topbar-sep { display: none; }
+  .topbar-brand { font-size: 10px; }
+  .slide-area { padding: 2px 4px; }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .rotate-hint { display: flex; }
+}
+
+/* Landscape phone — give slide max room */
+@media (max-height: 500px) {
+  .topbar { padding: 3px 12px; min-height: 34px; }
+  .notes-panel { max-height: 140px; }
+  .sidebar-progress { padding: 8px 12px; }
 }

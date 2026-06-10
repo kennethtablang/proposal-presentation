@@ -19,11 +19,11 @@ const CONTENT_MAP = {
 }
 
 const variants = {
-  enter: (dir) => ({ x: dir > 0 ? 60 : -60, opacity: 0, scale: 0.97 }),
-  center: { x: 0, opacity: 1, scale: 1 },
-  exit:  (dir) => ({ x: dir > 0 ? -60 : 60, opacity: 0, scale: 0.97 }),
+  enter: (dir) => ({ opacity: 0, scale: 0.93, y: dir > 0 ? 24 : -24, filter: 'blur(5px)' }),
+  center: { opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' },
+  exit:  (dir) => ({ opacity: 0, scale: 1.05, y: dir > 0 ? -24 : 24, filter: 'blur(5px)' }),
 }
-const transition = { duration: 0.38, ease: [0.32, 0, 0.67, 0] }
+const transition = { duration: 0.48, ease: [0.4, 0, 0.2, 1] }
 
 function TitleSlide({ slide }) {
   const Content = CONTENT_MAP[slide.id]

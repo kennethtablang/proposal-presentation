@@ -6,7 +6,8 @@ import { slides } from './slides/index.js'
 import MeshBackground from './components/MeshBackground.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import SlideEngine from './components/SlideEngine.jsx'
-import { TopBar, Controls, SpeakerNotes, KeyboardHint } from './components/Controls.jsx'
+import SlideScaler from './components/SlideScaler.jsx'
+import { TopBar, SpeakerNotes, KeyboardHint } from './components/Controls.jsx'
 import { ChevronRight } from 'lucide-react'
 
 export default function App() {
@@ -24,6 +25,9 @@ export default function App() {
       <main className="stage">
         <TopBar
           current={current}
+          total={total}
+          prev={prev}
+          next={next}
           dark={dark}
           setDark={setDark}
           notesOpen={notesOpen}
@@ -42,11 +46,11 @@ export default function App() {
             </button>
           )}
           <div className="slide-wrapper">
-            <SlideEngine current={current} direction={direction} />
+            <SlideScaler>
+              <SlideEngine current={current} direction={direction} />
+            </SlideScaler>
           </div>
         </div>
-
-        <Controls current={current} total={total} prev={prev} next={next} />
       </main>
 
       <SpeakerNotes slide={slide} open={notesOpen} />

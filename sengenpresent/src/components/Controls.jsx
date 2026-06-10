@@ -1,7 +1,7 @@
-import { Moon, Sun, FileText, Maximize2, ChevronLeft, ChevronRight, Keyboard } from 'lucide-react'
+import { Moon, Sun, FileText, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react'
 import { slides } from '../slides/index.js'
 
-export function TopBar({ current, dark, setDark, notesOpen, setNotesOpen }) {
+export function TopBar({ current, total, prev, next, dark, setDark, notesOpen, setNotesOpen }) {
   const slide = slides[current]
 
   const handleFullscreen = () => {
@@ -15,21 +15,48 @@ export function TopBar({ current, dark, setDark, notesOpen, setNotesOpen }) {
   return (
     <div className="topbar">
       <div className="topbar-left">
-        <span>SEN-GEN</span>
+        <span className="topbar-brand">SEN-GEN</span>
         <span className="topbar-sep">·</span>
-        <span className="topbar-section">Section {slide.section}</span>
-        <span className="topbar-sep">·</span>
-        <span>{slide.sectionTitle}</span>
+        <span className="topbar-section">§{slide.section}</span>
+        <span className="topbar-sep topbar-hide-sm">·</span>
+        <span className="topbar-hide-sm">{slide.sectionTitle}</span>
       </div>
+
       <div className="topbar-right">
+        <button
+          className="icon-btn nav-btn"
+          onClick={prev}
+          disabled={current === 0}
+          title="Previous (←)"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={14} />
+        </button>
+
+        <span className="topbar-counter">
+          {current + 1}<span className="topbar-total">/{total}</span>
+        </span>
+
+        <button
+          className="icon-btn nav-btn"
+          onClick={next}
+          disabled={current === total - 1}
+          title="Next (→)"
+          aria-label="Next slide"
+        >
+          <ChevronRight size={14} />
+        </button>
+
+        <div className="topbar-divider" />
+
         <button
           className="icon-btn"
           onClick={() => setNotesOpen(o => !o)}
-          title="Toggle speaker notes (N)"
+          title="Speaker notes (N)"
           aria-label="Toggle speaker notes"
           style={{ background: notesOpen ? 'var(--bg-overlay)' : undefined }}
         >
-          <FileText size={15} />
+          <FileText size={14} />
         </button>
         <button
           className="icon-btn"
@@ -37,45 +64,17 @@ export function TopBar({ current, dark, setDark, notesOpen, setNotesOpen }) {
           title="Toggle dark mode"
           aria-label="Toggle dark mode"
         >
-          {dark ? <Sun size={15} /> : <Moon size={15} />}
+          {dark ? <Sun size={14} /> : <Moon size={14} />}
         </button>
         <button
-          className="icon-btn"
+          className="icon-btn topbar-hide-sm"
           onClick={handleFullscreen}
           title="Fullscreen (F11)"
           aria-label="Toggle fullscreen"
         >
-          <Maximize2 size={15} />
+          <Maximize2 size={14} />
         </button>
       </div>
-    </div>
-  )
-}
-
-export function Controls({ current, total, prev, next }) {
-  return (
-    <div className="controls">
-      <button
-        className="ctrl-btn"
-        onClick={prev}
-        disabled={current === 0}
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={15} /> Prev
-      </button>
-
-      <div className="slide-counter">
-        {current + 1} <span style={{ color:'var(--text-muted)' }}>/ {total}</span>
-      </div>
-
-      <button
-        className="ctrl-btn primary"
-        onClick={next}
-        disabled={current === total - 1}
-        aria-label="Next slide"
-      >
-        Next <ChevronRight size={15} />
-      </button>
     </div>
   )
 }
@@ -92,14 +91,13 @@ export function SpeakerNotes({ slide, open }) {
 export function KeyboardHint() {
   return (
     <div style={{
-      position:'fixed', bottom:16, right:16, zIndex:25,
+      position:'fixed', bottom:12, right:12, zIndex:25,
       display:'flex', gap:4, alignItems:'center',
       fontSize:10, color:'var(--text-muted)',
       background:'var(--bg-card)', border:'1px solid var(--border)',
-      borderRadius:8, padding:'5px 10px',
+      borderRadius:8, padding:'4px 8px',
       boxShadow:'var(--shadow-sm)',
     }}>
-      <Keyboard size={11} />
       <span>← → navigate &nbsp;·&nbsp; N notes &nbsp;·&nbsp; Home/End</span>
     </div>
   )

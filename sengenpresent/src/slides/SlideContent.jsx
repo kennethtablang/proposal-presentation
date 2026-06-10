@@ -3,7 +3,10 @@
 // ─────────────────────────────────────────────────────────────
 import {
   Building2, MapPin, BookOpen, Landmark, ClipboardList, Calendar, Layers, UserPlus, GraduationCap,
+  FileImage,
 } from 'lucide-react'
+import proctorLogo  from '../assets/proctor (4).png'
+import kennethPhoto from '../assets/kenneth pogi.png'
 
 // ── S01 TITLE ────────────────────────────────────────────────
 export function S01_Title() {
@@ -12,7 +15,9 @@ export function S01_Title() {
       <div style={{ position:'absolute', width:280, height:280, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.15)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
       <div style={{ position:'absolute', width:400, height:400, borderRadius:'50%', border:'1px solid rgba(105,154,205,0.08)', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
 
-      <div className="title-badge anim-scale-in" style={{ fontSize:48, letterSpacing:-1 }}>SG</div>
+      <div className="title-badge anim-scale-in">
+        <img src={proctorLogo} alt="SEN-GEN Logo" style={{ width:'100%', height:'100%', objectFit:'contain', borderRadius:16, padding:8 }} />
+      </div>
 
       <div className="anim-fade-up delay-1">
         <div style={{ fontSize:22, fontWeight:700, letterSpacing:2.5, color:'rgba(228,183,149,0.8)', marginBottom:14, textTransform:'uppercase' }}>
@@ -57,7 +62,7 @@ export function S02_Outline() {
     <div className="slide-inner">
       <div className="slide-heading anim-fade-up">Presentation Outline</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Roadmap</h2>
-      <div className="grid-2 slide-body anim-fade-up delay-2" style={{ gap:10, overflow:'hidden' }}>
+      <div className="grid-2 slide-body anim-fade-up delay-2 card-stagger" style={{ gap:10, overflow:'hidden' }}>
         {secs.map((s) => (
           <div key={s.n} className="card" style={{ padding:'14px 18px', display:'flex', alignItems:'center', gap:14 }}>
             <div style={{ width:48, height:48, borderRadius:10, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20, fontWeight:800, color:'#fff', flexShrink:0 }}>{s.n}</div>
@@ -82,10 +87,14 @@ export function S03_Researcher() {
   return (
     <div className="slide-inner">
       <div className="slide-heading anim-fade-up">Section 01 — Opening</div>
-      <h2 className="slide-title-h anim-fade-up delay-1">About the Researcher</h2>
+      <h2 className="slide-title-h anim-fade-up delay-1">About the Researcher/Developer</h2>
       <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', gap:24 }}>
         <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:10, flexShrink:0 }}>
-          <div style={{ width:100, height:100, borderRadius:24, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:40, fontWeight:800, color:'#fff', boxShadow:'var(--shadow-md)' }}>KT</div>
+          <img
+            src={kennethPhoto}
+            alt="Kenneth Rey Rallustian Tablang"
+            style={{ width:160, height:160, borderRadius:24, objectFit:'cover', boxShadow:'var(--shadow-lg)', border:'3px solid var(--g2)' }}
+          />
           <div style={{ fontSize:20, fontWeight:600, color:'var(--text-muted)', textAlign:'center', lineHeight:1.4 }}>Kenneth Rey<br/>Rallustian Tablang</div>
           <div style={{ fontSize:18, color:'var(--text-muted)', textAlign:'center' }}>Researcher / Developer</div>
         </div>
@@ -119,7 +128,7 @@ export function S04_Context() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         A dynamic private HEI serving IT and allied programs in Pangasinan — currently operating without an integrated digital enlistment and scheduling platform.
       </div>
-      <div className="grid-2 slide-body anim-fade-up delay-3" style={{ gap:10, overflow:'hidden' }}>
+      <div className="grid-2 slide-body anim-fade-up delay-3 card-stagger" style={{ gap:10, overflow:'hidden' }}>
         {facts.map((f,i) => (
           <div key={i} className="card" style={{ padding:'12px 16px', display:'flex', gap:14, alignItems:'flex-start' }}>
             <f.Icon size={34} strokeWidth={1.5} style={{ flexShrink:0, color:'var(--g2)', marginTop:2 }} />
@@ -149,7 +158,7 @@ export function S06_CoreProblem() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 02 — Background</div>
       <h2 className="slide-title-h anim-fade-up delay-1" style={{ fontSize:44 }}>The Core Problem — 7 Operational Gaps</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {problems.map((p,i) => (
           <div key={i} className="problem-card" style={{ borderLeftColor: p.color, borderLeftWidth:3 }}>
             <div className="prob-num" style={{ background: p.bg, color: p.color, width:34, height:34, fontSize:18 }}>{p.n}</div>
@@ -180,7 +189,7 @@ export function S07_PhHEI() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         Leading PH universities have operated mature digital enlistment for over a decade — a standard STI Alaminos has yet to achieve.
       </div>
-      <div className="slide-body anim-fade-up delay-3" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
+      <div className="slide-body anim-fade-up delay-3 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {unis.map((u,i) => (
           <div key={i} className="card" style={{ padding:'12px 16px', display:'flex', alignItems:'center', gap:14 }}>
             <div style={{ flex:'0 0 220px' }}>
@@ -210,7 +219,7 @@ export function S08_WalkIn() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 02 — Background</div>
       <h2 className="slide-title-h anim-fade-up delay-1" style={{ fontSize:44 }}>Walk-In Enlistment Flow (As-Is)</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {steps.map((s,i) => (
           <div key={i} style={{ display:'flex', gap:14, padding:'11px 14px', background:'var(--bg-card)', borderRadius:8, border:'1px solid var(--border)', alignItems:'flex-start' }}>
             <div style={{ width:32, height:32, borderRadius:8, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:700, color:'#fff', flexShrink:0, marginTop:2 }}>{s.n}</div>
@@ -239,7 +248,7 @@ export function S09_ManualSched() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 02 — Background</div>
       <h2 className="slide-title-h anim-fade-up delay-1" style={{ fontSize:44 }}>Manual Schedule Construction (As-Is)</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {steps.map((s,i) => (
           <div key={i} style={{ display:'flex', gap:14, padding:'11px 14px', background:'var(--bg-card)', borderRadius:8, border:'1px solid var(--border)', alignItems:'flex-start' }}>
             <div style={{ width:32, height:32, borderRadius:8, background:'linear-gradient(135deg,#e4b795,#d97706)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:700, color:'#fff', flexShrink:0, marginTop:2 }}>{s.n}</div>
@@ -268,7 +277,7 @@ export function S10_Stakeholder() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 02 — Background</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Stakeholder Impact Analysis</h2>
-      <div className="grid-2 slide-body anim-fade-up delay-2" style={{ gap:10, overflow:'hidden' }}>
+      <div className="grid-2 slide-body anim-fade-up delay-2 card-stagger" style={{ gap:10, overflow:'hidden' }}>
         {roles.map((r,i) => (
           <div key={i} className="role-card" style={{ border: r.highlight ? '1px solid var(--chip-red-t)' : '1px solid var(--border)' }}>
             <div style={{ display:'flex', gap:12, alignItems:'center', marginBottom:8 }}>
@@ -295,7 +304,7 @@ export function S11_Consequences() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 02 — Background</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Consequences of Inaction</h2>
-      <div className="row slide-body anim-fade-up delay-2" style={{ overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'hidden' }}>
         {cols.map((c,i) => (
           <div key={i} className="card" style={{ display:'flex', flexDirection:'column', gap:0, padding:0, overflow:'hidden' }}>
             <div style={{ background: c.bg, color: c.color, padding:'12px 16px', fontSize:24, fontWeight:700, letterSpacing:0.5 }}>{c.label}</div>
@@ -329,7 +338,7 @@ export function S13_Objectives() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         <strong style={{ fontStyle:'normal' }}>Main Objective:</strong> {mainObj}
       </div>
-      <div className="slide-body anim-fade-up delay-3" style={{ display:'flex', flexDirection:'column', gap:10, overflow:'hidden' }}>
+      <div className="slide-body anim-fade-up delay-3 card-stagger" style={{ display:'flex', flexDirection:'column', gap:10, overflow:'hidden' }}>
         {objs.map((o,i) => (
           <div key={i} className="card" style={{ display:'flex', gap:16, padding:'14px 18px', borderLeft:`3px solid ${o.color}` }}>
             <div style={{ flexShrink:0 }}>
@@ -348,38 +357,33 @@ export function S13_Objectives() {
 }
 
 // ── S14 IPO FRAMEWORK ────────────────────────────────────────
+// To use your own framework image:
+//   1. Add the file to src/assets/ (e.g. framework.png)
+//   2. Import it: import frameworkImg from '../assets/framework.png'
+//   3. Replace the placeholder <div> below with:
+//      <img src={frameworkImg} alt="Conceptual Framework" className="framework-img" />
 export function S14_IPO() {
   return (
-    <div className="slide-inner" style={{ gap:12 }}>
-      <div className="slide-heading anim-fade-up">Section 03 — Objectives & Framework</div>
+    <div className="slide-inner" style={{ gap:10 }}>
+      <div className="slide-heading anim-fade-up">Section 03 — Objectives &amp; Framework</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Conceptual Framework — IPO Model</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', gap:12, overflow:'hidden' }}>
-        <div className="ipo-box">
-          <div className="ipo-header grad-text" style={{ borderColor:'var(--g1)' }}>INPUT</div>
-          {['Student Profiles (program, year, curriculum)','Subject Records (codes, units, prereqs)','Faculty Profiles (expertise, load, availability)','Room Records (capacity, type)','Academic Calendar & System Parameters','Student slot requests & approvals'].map((t,i) => (
-            <div key={i} className="ipo-item"><div className="ipo-dot" style={{ background:'var(--g1)', width:8, height:8 }} />{t}</div>
-          ))}
+      <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+
+        {/* ── REPLACE THIS BLOCK WITH YOUR FRAMEWORK IMAGE ────────── */}
+        <div className="framework-placeholder">
+          <FileImage size={48} style={{ color:'var(--text-muted)', marginBottom:16, flexShrink:0 }} />
+          <div style={{ fontSize:24, fontWeight:600, color:'var(--text-secondary)', marginBottom:8 }}>
+            Conceptual Framework Image
+          </div>
+          <div style={{ fontSize:18, color:'var(--text-muted)', lineHeight:1.6, textAlign:'center' }}>
+            Add your image to <code style={{ background:'var(--bg-card-alt)', padding:'2px 6px', borderRadius:4, fontSize:16 }}>src/assets/framework.png</code>
+            <br />then import and replace this block with an &lt;img&gt; tag.
+          </div>
         </div>
-        <div style={{ display:'flex', alignItems:'center', flexShrink:0 }}>
-          <div style={{ fontSize:32, color:'var(--g2)' }}>→</div>
-        </div>
-        <div className="ipo-box" style={{ flex:1.3 }}>
-          <div className="ipo-header grad-text" style={{ borderColor:'var(--g2)' }}>PROCESS (FDD)</div>
-          {['Generative Scheduling Engine (CSP)','· Faculty load balance & compliance','· Time conflict avoidance','· Room capacity matching','ETL Data Pipeline (XLSX → DB)','Student Enlistment Workflow','Automated Notifications'].map((t,i) => (
-            <div key={i} className="ipo-item" style={{ paddingLeft: t.startsWith('·') ? 16 : 0 }}><div className="ipo-dot" style={{ background:'var(--g2)', opacity: t.startsWith('·') ? 0.5 : 1, width:8, height:8 }} />{t}</div>
-          ))}
-        </div>
-        <div style={{ display:'flex', alignItems:'center', flexShrink:0 }}>
-          <div style={{ fontSize:32, color:'var(--g3)' }}>→</div>
-        </div>
-        <div className="ipo-box">
-          <div className="ipo-header grad-text" style={{ borderColor:'var(--g3)' }}>OUTPUT</div>
-          {['Conflict-Free Class Schedules','Enlistment Confirmations','Faculty Load Summaries','Room Utilization Reports','Analytics Dashboard','Audit Logs & Exports'].map((t,i) => (
-            <div key={i} className="ipo-item"><div className="ipo-dot" style={{ background:'var(--g3)', width:8, height:8 }} />{t}</div>
-          ))}
-        </div>
+        {/* ─────────────────────────────────────────────────────────── */}
+
       </div>
-      <div className="anim-fade-up delay-4" style={{ fontSize:19, color:'var(--text-muted)', textAlign:'center', flexShrink:0 }}>
+      <div className="anim-fade-up delay-3" style={{ fontSize:18, color:'var(--text-muted)', textAlign:'center', flexShrink:0 }}>
         ↻ Continuous Evaluation Loop — ISO 25010: Functional Suitability · Performance · Usability · Reliability · Maintainability · Portability
       </div>
     </div>
@@ -400,7 +404,7 @@ export function S15_Scope() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 03 — Objectives & Framework</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Scope & Limitations</h2>
-      <div className="row slide-body anim-fade-up delay-2" style={{ gap:14, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:14, overflow:'hidden' }}>
         <div className="card" style={{ padding:0, overflow:'hidden' }}>
           <div style={{ background:'var(--chip-green)', color:'var(--chip-green-t)', padding:'12px 16px', fontSize:22, fontWeight:700 }}>✓ Within Scope</div>
           <div style={{ padding:'14px 16px', display:'flex', flexDirection:'column', gap:6 }}>
@@ -437,7 +441,7 @@ export function S18_LitStats() {
     <div className="slide-inner" style={{ gap:12 }}>
       <div className="slide-heading anim-fade-up">Section 04 — Literature</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Manual vs Algorithmic Scheduling — The Numbers</h2>
-      <div className="grid-3 slide-body anim-fade-up delay-2" style={{ overflow:'hidden' }}>
+      <div className="grid-3 slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'hidden' }}>
         {stats.map((s,i) => (
           <div key={i} className="stat-card">
             <div className="stat-num grad-text">{s.num}</div>
@@ -536,7 +540,7 @@ export function S25_ResearchDesign() {
     <div className="slide-inner" style={{ gap:12 }}>
       <div className="slide-heading anim-fade-up">Section 05 — Methodology</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Research Design: Descriptive-Developmental</h2>
-      <div className="row slide-body anim-fade-up delay-2" style={{ gap:14, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:14, overflow:'hidden' }}>
         <div className="card" style={{ borderTop:'3px solid var(--g2)' }}>
           <div style={{ fontSize:20, fontWeight:700, color:'var(--g2)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Descriptive Dimension</div>
           <div style={{ fontSize:26, fontWeight:600, color:'var(--text-primary)', marginBottom:10 }}>Document existing procedures</div>
@@ -607,7 +611,7 @@ export function S33_Architecture() {
     <div className="slide-inner" style={{ gap:12 }}>
       <div className="slide-heading anim-fade-up">Section 06 — System</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Three-Tier Web Architecture</h2>
-      <div className="row slide-body anim-fade-up delay-2" style={{ gap:12, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:12, overflow:'hidden' }}>
         {tiers.map((t,i) => (
           <div key={i} className="card" style={{ padding:0, overflow:'hidden', borderTop:`3px solid ${t.color}` }}>
             <div style={{ padding:'12px 16px', borderBottom:'1px solid var(--border)' }}>
@@ -639,7 +643,7 @@ export function S36_Engine() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         The Academic Head initiates generation → CSP evaluates all constraints simultaneously → constraint propagation reduces search space → backtracking finds first fully satisfying assignment.
       </div>
-      <div className="row slide-body anim-fade-up delay-3" style={{ gap:12, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-3 card-stagger" style={{ gap:12, overflow:'hidden' }}>
         <div className="card" style={{ borderColor:'var(--chip-red-t)' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'var(--chip-red-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Hard Constraints</div>
           {['No room double-booking','No faculty double-assignment','Room capacity ≥ enrollment','Load ≤ CHED maximum','Subject-qualified faculty only'].map((t,i) => <div key={i} style={{ fontSize:22, color:'var(--text-secondary)', paddingLeft:16, position:'relative', marginBottom:5 }}><span style={{ position:'absolute', left:0, color:'var(--chip-red-t)' }}>✗</span>{t}</div>)}
@@ -673,7 +677,7 @@ export function S39_NotifRBAC() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 06 — System</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Features 5 & 6 — Notifications + RBAC</h2>
-      <div className="row slide-body anim-fade-up delay-2" style={{ gap:14, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:14, overflow:'hidden' }}>
         <div className="card">
           <div style={{ fontSize:19, fontWeight:700, color:'var(--g2)', textTransform:'uppercase', letterSpacing:1, marginBottom:12 }}>Automated Email Notifications</div>
           <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
@@ -750,7 +754,7 @@ export function S45_Regulatory() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 08 — Significance</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Regulatory & Policy Alignment</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:8 }}>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:8 }}>
         {laws.map((l,i) => (
           <div key={i} className="card" style={{ display:'flex', gap:14, padding:'13px 16px', borderLeft:`3px solid ${l.color}` }}>
             <div style={{ flexShrink:0, width:150 }}>
@@ -791,7 +795,7 @@ export function GenericContent({ slide }) {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section {slide.section} — {slide.sectionTitle}</div>
       <h2 className="slide-title-h anim-fade-up delay-1">{slide.title}</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:8 }}>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:8 }}>
         {items.map((item,i) => (
           <div key={i} className="card" style={{ padding:'13px 18px', display:'flex', gap:12, alignItems:'flex-start' }}>
             <div style={{ width:9, height:9, borderRadius:'50%', background:'var(--brand-gradient)', flexShrink:0, marginTop:8 }} />
