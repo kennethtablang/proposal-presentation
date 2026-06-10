@@ -114,10 +114,10 @@ export function S03_Researcher() {
 // ── S04 INSTITUTIONAL CONTEXT ────────────────────────────────
 export function S04_Context() {
   const facts = [
-    { Icon: Building2,    label:'Type',              val:'Private Higher Education Institution (HEI)' },
+    { Icon: Building2,    label:'Type',              val:'Private Technical-Vocational Institution' },
     { Icon: MapPin,       label:'Location',          val:'Alaminos City, Pangasinan, Philippines' },
     { Icon: BookOpen,     label:'Programs',          val:'Information Technology and allied programs' },
-    { Icon: Landmark,     label:'Regulatory Body',   val:'Commission on Higher Education (CHED)' },
+    { Icon: Landmark,     label:'Regulatory Body',   val:'Technical Education and Skills Development Authority (TESDA)' },
     { Icon: ClipboardList,label:'Enlistment Method', val:'Manual — paper forms, walk-in registrar visits' },
     { Icon: Calendar,     label:'Scheduling Method', val:'Spreadsheet-based, manually built by coordinators' },
   ]
@@ -126,7 +126,7 @@ export function S04_Context() {
       <div className="slide-heading anim-fade-up">Section 01 — Opening</div>
       <h2 className="slide-title-h anim-fade-up delay-1">STI Alaminos — Study Locale</h2>
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
-        A dynamic private HEI serving IT and allied programs in Pangasinan — currently operating without an integrated digital enlistment and scheduling platform.
+        A dynamic and growing private technical-vocational institution under TESDA serving IT and allied programs in Pangasinan — currently operating without an integrated digital enlistment and scheduling platform.
       </div>
       <div className="grid-2 slide-body anim-fade-up delay-3 card-stagger" style={{ gap:10, overflow:'hidden' }}>
         {facts.map((f,i) => (
@@ -148,7 +148,7 @@ export function S06_CoreProblem() {
   const problems = [
     { n:1, head:'No Self-Service Enlistment',                color:'var(--chip-red-t)',    bg:'var(--chip-red)',    body:'Students cannot browse subjects or enlist without a physical registrar visit — structural barrier for those with work or transport constraints.' },
     { n:2, head:'Manual Class Schedule Construction',        color:'var(--chip-amber-t)',  bg:'var(--chip-amber)',  body:'Spreadsheet-based scheduling with no conflict detection. Double-bookings surface only after student distribution.' },
-    { n:3, head:'No Automated Faculty Loading Report',       color:'var(--chip-green-t)',  bg:'var(--chip-green)',  body:'Consolidated faculty loads tallied manually. No automated generation — undetected overloading, CHED non-compliance risk.' },
+    { n:3, head:'No Automated Faculty Loading Report',       color:'var(--chip-green-t)',  bg:'var(--chip-green)',  body:'Consolidated faculty loads tallied manually. No automated generation — undetected overloading, TESDA non-compliance risk.' },
     { n:4, head:'No Grid Schedule Views',                    color:'var(--chip-purple-t)', bg:'var(--chip-purple)', body:'No digital grid for Faculty View, Classroom View, or Class Section View. Coordinators read raw spreadsheet rows.' },
     { n:5, head:'Manual Room Utilization Report',            color:'var(--chip-teal-t)',   bg:'var(--chip-teal)',   body:'Room usage tallied manually each semester — no automated computation or dashboard, making planning reactive.' },
     { n:6, head:'No Automated Schedule Change Notifications',color:'var(--chip-orange-t)', bg:'var(--chip-orange)', body:'No notification system for schedule revisions. Stakeholders learn via word-of-mouth or repeat registrar visits.' },
@@ -176,11 +176,11 @@ export function S06_CoreProblem() {
 // ── S07 PH HEI CONTEXT ──────────────────────────────────────
 export function S07_PhHEI() {
   const unis = [
-    { name:'Ateneo de Manila University',           sys:'AISIS',               yr:'2005',    feat:'Browse sections, enlist, manage load independently online. Multiple revamps since launch.' },
-    { name:'University of the Philippines Diliman', sys:'CRS',                 yr:'Ongoing', feat:'Pre-enlistment mid-semester; batched slot allocation by academic standing; Form 5A.' },
-    { name:'De La Salle University',                sys:'Animo.sys',           yr:'2013',    feat:'Online enlistment cart; real-time capacity management; separate from tuition assessment.' },
-    { name:'Far Eastern University',                sys:'Student Central NEO', yr:'Recent',   feat:'Online pre-enlistment; real-time fee updates based on chosen subjects; recently upgraded.' },
-    { name:'University of Santo Tomas',             sys:'myUSTe Portal',       yr:'Active',  feat:'All-in-one: schedule view, academic records, subject load management, enlistment.' },
+    { name:'Ateneo de Manila University',           sys:'AISIS',               yr:'2005',    feat:'Browse sections, enlist, manage load independently online. Multiple revamps since launch. (The Guidon, 2022; Ateneo, 2023)' },
+    { name:'University of the Philippines Diliman', sys:'CRS',                 yr:'Ongoing', feat:'Pre-enlistment mid-semester; batched slot allocation by academic standing; Form 5A. (UP, 2024)' },
+    { name:'De La Salle University',                sys:'Animo.sys',           yr:'2013',    feat:'Online enlistment cart; real-time capacity management; separate from tuition assessment. (DLSU, 2022)' },
+    { name:'Far Eastern University',                sys:'Student Central NEO', yr:'Recent',   feat:'Online pre-enlistment; real-time fee updates based on chosen subjects; recently upgraded. (FEU Advocate, 2025)' },
+    { name:'University of Santo Tomas',             sys:'myUSTe Portal',       yr:'Active',  feat:'All-in-one: schedule view, academic records, subject load management, enlistment. (UST, 2023)' },
   ]
   return (
     <div className="slide-inner" style={{ gap:10 }}>
@@ -242,7 +242,7 @@ export function S09_ManualSched() {
     { n:3, act:'Draft schedule assembled manually and shared for review',                issue:'18–22 working days avg. scheduling cycle (Chen et al., 2021)' },
     { n:4, act:'Room double-booking discovered → revise. Faculty overload found → revise again', issue:'8–12% conflict density in manual schedules (Veenstra & Vis, 2023)' },
     { n:5, act:'Revisions communicated to all affected parties across disconnected files', issue:'Each conflict round: new notifications, calls, file corrections' },
-    { n:6, act:'Workable but rarely optimal schedule finally published',                 issue:'No CHED load compliance guarantee; no real-time conflict detection' },
+    { n:6, act:'Workable but rarely optimal schedule finally published',                 issue:'No TESDA load compliance guarantee; no real-time conflict detection' },
   ]
   return (
     <div className="slide-inner" style={{ gap:10 }}>
@@ -296,8 +296,8 @@ export function S10_Stakeholder() {
 // ── S11 CONSEQUENCES ─────────────────────────────────────────
 export function S11_Consequences() {
   const cols = [
-    { label:'Short-Term',  color:'var(--chip-amber-t)', bg:'var(--chip-amber)', items:['Hidden costs from scheduling conflicts consuming staff time each cycle','Enlistment queues degrade student experience','CHED load guideline violations — compliance risk','Registrar capacity exceeded at peak periods'] },
-    { label:'Medium-Term', color:'var(--chip-red-t)',   bg:'var(--chip-red)',   items:['Risk of falling behind CHED quality audit standards','Students face sustained inequitable access','Faculty dissatisfaction and potential attrition','Growing populations exceed sustainable admin capacity'] },
+    { label:'Short-Term',  color:'var(--chip-amber-t)', bg:'var(--chip-amber)', items:['Hidden costs from scheduling conflicts consuming staff time each cycle','Enlistment queues degrade student experience','TESDA load guideline violations — compliance risk','Registrar capacity exceeded at peak periods'] },
+    { label:'Medium-Term', color:'var(--chip-red-t)',   bg:'var(--chip-red)',   items:['Risk of falling behind TESDA institutional quality audit standards','Students face sustained inequitable access','Faculty dissatisfaction and potential attrition','Growing populations exceed sustainable admin capacity'] },
     { label:'Long-Term',   color:'var(--chip-navy-t)',  bg:'var(--chip-navy)', items:['Compounding institutional credibility gap vs peers','No historical data for evidence-based planning','Persistent gap from CHED quality benchmarks','Missed opportunity to serve UN SDG 4 mandate'] },
   ]
   return (
@@ -397,7 +397,7 @@ export function S15_Scope() {
     { t:'No multi-campus integration', d:'Purpose-built for STI Alaminos only' },
     { t:'No financial processing', d:'Tuition is enrollment, not enlistment' },
     { t:'No AI/ML predictive scheduling', d:'Deliberate — insufficient historical data; CSP is the correct foundational step' },
-    { t:'No CHED SIS interface', d:'External government portal excluded' },
+    { t:'No TESDA Registry System interface', d:'External government portal excluded' },
     { t:'Findings not generalizable', d:'Contextual replication required for other institutions' },
   ]
   return (
@@ -456,7 +456,7 @@ export function S18_LitStats() {
 
 // ── S20 CSP ENGINE ───────────────────────────────────────────
 export function S20_CSP() {
-  const hard = ['No room double-booking at same time slot','No faculty double-assignment simultaneously','Room capacity ≥ section enrollment','Faculty load ≤ CHED maximum per semester','Faculty assigned only to qualified subjects']
+  const hard = ['No room double-booking at same time slot','No faculty double-assignment simultaneously','Room capacity ≥ section enrollment','Faculty load ≤ TESDA maximum per semester','Faculty assigned only to qualified subjects']
   const soft = ['Faculty preferred time slots honored where possible','Minimized idle gaps between consecutive sections','Equitable distribution of load across faculty']
   const evidence = [
     { src:'Diallo et al. (2024)', f:'100% hard-constraint satisfaction + 78% soft fulfillment in real-world deployments' },
@@ -646,7 +646,7 @@ export function S36_Engine() {
       <div className="row slide-body anim-fade-up delay-3 card-stagger" style={{ gap:12, overflow:'hidden' }}>
         <div className="card" style={{ borderColor:'var(--chip-red-t)' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'var(--chip-red-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Hard Constraints</div>
-          {['No room double-booking','No faculty double-assignment','Room capacity ≥ enrollment','Load ≤ CHED maximum','Subject-qualified faculty only'].map((t,i) => <div key={i} style={{ fontSize:22, color:'var(--text-secondary)', paddingLeft:16, position:'relative', marginBottom:5 }}><span style={{ position:'absolute', left:0, color:'var(--chip-red-t)' }}>✗</span>{t}</div>)}
+          {['No room double-booking','No faculty double-assignment','Room capacity ≥ enrollment','Load ≤ TESDA maximum','Subject-qualified faculty only'].map((t,i) => <div key={i} style={{ fontSize:22, color:'var(--text-secondary)', paddingLeft:16, position:'relative', marginBottom:5 }}><span style={{ position:'absolute', left:0, color:'var(--chip-red-t)' }}>✗</span>{t}</div>)}
         </div>
         <div className="card" style={{ borderColor:'var(--chip-teal-t)' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'var(--chip-teal-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Soft Constraints</div>
@@ -744,11 +744,12 @@ export function S41_ISO() {
 // ── S45 REGULATORY ───────────────────────────────────────────
 export function S45_Regulatory() {
   const laws = [
-    { law:'RA 10844',          short:'DICT Act of 2015',              body:"Mandates ICT use to improve institutional service delivery. SEN-GEN directly digitalizes STI Alaminos enlistment and scheduling services.",    color:'var(--g2)' },
-    { law:'CHED MO 46, s.2012',short:'Quality Assurance in PH HE',   body:"Requires institutions to maintain efficient academic administrative systems. SEN-GEN's automation directly addresses CHED quality criteria.",    color:'var(--g1)' },
-    { law:'RA 10173',          short:'Data Privacy Act of 2012',      body:'Governs student/faculty data handling. SEN-GEN implements JWT, RBAC, IIS/SSL, and comprehensive audit logging for full compliance.',             color:'var(--g3)' },
-    { law:'UN SDG 4',          short:'Quality Education',             body:'24/7 student portal eliminates the in-person access requirement — directly serving equitable, inclusive education mandates.',                    color:'var(--g2)' },
-    { law:'UN SDG 9',          short:'Innovation & Infrastructure',   body:'Replacing fragmented manual processes with integrated digital infrastructure directly operationalizes SDG 9 for the institution.',              color:'var(--g1)' },
+    { law:'TESDA',             short:'Primary Regulatory Mandate',    body:'As the primary regulatory body for STI Alaminos, TESDA mandates compliance with technical-vocational education standards. SEN-GEN operationalizes TESDA-aligned faculty load limits and institutional reporting.',  color:'var(--g2)' },
+    { law:'RA 10844',          short:'DICT Act of 2015',              body:'Mandates ICT use to improve institutional service delivery. SEN-GEN directly digitalizes STI Alaminos enlistment and scheduling services.',     color:'var(--g1)' },
+    { law:'CHED MO 46, s.2012',short:'Quality Assurance in PH HE',   body:'Broadly encourages the technical-vocational sector to maintain efficient academic administrative systems. SEN-GEN supports these quality improvement objectives.',                                                      color:'var(--g3)' },
+    { law:'RA 10173',          short:'Data Privacy Act of 2012',      body:'Governs student/faculty data handling. SEN-GEN implements JWT, RBAC, IIS/SSL, and comprehensive audit logging for full compliance.',             color:'var(--g2)' },
+    { law:'UN SDG 4',          short:'Quality Education',             body:'24/7 student portal eliminates the in-person access requirement — directly serving equitable, inclusive education mandates (United Nations, 2022).', color:'var(--g1)' },
+    { law:'UN SDG 9',          short:'Innovation & Infrastructure',   body:'Replacing fragmented manual processes with integrated digital infrastructure directly operationalizes SDG 9 for the institution (United Nations, 2022).', color:'var(--g3)' },
   ]
   return (
     <div className="slide-inner" style={{ gap:10 }}>
@@ -777,16 +778,16 @@ export function GenericContent({ slide }) {
     's19': ['Leite (2025): 8 SE Asian HEIs — digital platforms show measurable efficiency gains','Mansoor et al. (2022): automated data import is among the highest-impact enrollment features','Martinez & Chen (2023): 84% of systems with real-time slots + notifications + 24/7 access score >4.0','Gkrimpizi et al. (2024): small-to-medium HEIs are most impacted by absence of digital enlistment tools'],
     's21': ['ETL (Mansoor, 2022): automated import reduces entry errors, accelerates pre-enlistment','RBAC (Kim & Park, 2022): tiered role structure reduces unauthorized access risks','Dashboard (Leite, 2025): semester-filtered views used 3.4× more than aggregate views','Notifications (Martinez & Chen, 2023): 5+ events → 41% higher student satisfaction'],
     's23': ['Literature quantifies STI Alaminos costs numerically: 18–22 days, 8–12% conflicts, 62% manual prevalence','Every SEN-GEN feature is validated by peer-reviewed evidence','Benchmark range 4.11–4.55 provides empirically grounded performance standard','RESEARCH GAP: No study has built a purpose-built integrated enlistment AND scheduling system for small-to-medium Philippine private HEIs'],
-    's26': ['Agile: iterative cycles, continuous stakeholder collaboration, adaptive planning (Beck et al., 2001)','FDD chosen: SEN-GEN has 6 clearly bounded functional domains — ETL, Scheduling, Portal, Dashboard, Notifications, RBAC','Unlike Scrum: FDD allows each feature to be independently designed, built, and validated — reducing integration risk','Each feature documented with acceptance criteria from stakeholder interviews + ISO 25010 dimensions'],
+    's26': ['Agile: iterative cycles, continuous stakeholder collaboration, adaptive planning (Beck et al., 2001)','FDD chosen: SEN-GEN has 6 clearly bounded functional domains — ETL, Scheduling, Portal, Dashboard, Notifications, RBAC (Palmer & Felsing, 2002)','Unlike Scrum: FDD allows each feature to be independently designed, built, and validated — reducing integration risk','Each feature documented with acceptance criteria from stakeholder interviews + ISO 25010 dimensions'],
     's27': ['Phase 1 — Domain Model: interviews + observation → ERD + architecture blueprint','Phase 2 — Features List: 3 feature sets (Enlistment Mgmt, Scheduling, Admin Mgmt)','Phase 3 — Plan by Feature: sequence by technical dependency — Infrastructure → Engine → Portal → Admin'],
     's28': ['Phase 4 — Design: ERD, REST API spec, CSP pseudocode, React component hierarchy, as-is/to-be flowcharts','Phase 5 — Build: unit tests → integration → UAT deployment → ISO 25010 questionnaire → weighted mean analysis','All design artifacts validated with STI Alaminos stakeholders before implementation'],
     's29': ['Primary: structured interviews + non-participatory observation (Registrar, Dept Head, faculty, students)','Secondary: institutional documents — enrollment forms, scheduling spreadsheets, faculty load logs','Tertiary: internet-accessed academic literature, technical documentation, benchmarking data'],
     's30': ['Use Case Diagrams — functional boundaries for each of 6 roles','Flowcharts — as-is manual vs to-be SEN-GEN digital workflows','ERD — all entities: Students, Faculty, Subjects, Sections, Rooms, Schedules, EnlistmentRequests, Notifications, Users','Likert Scale (5-point) + Weighted Mean — ISO 25010 instrument (1=Strongly Disagree → 5=Strongly Agree)'],
     's34': ['React JS — component-based, 6 role-differentiated interfaces, reusable components','ASP.NET Core Web API — built-in DI, JWT middleware, cross-platform; high maintainability (ISO 25010)','Entity Framework Core — code-first migrations, schema consistency, optimized raw queries for CSP','SQL Server — referential integrity, transactional consistency, slot capacity enforcement at DB level','IIS — HTTP routing, SSL/TLS (RA 10173 Data Privacy Act compliance)'],
-    's35': ['Extract: Registrar uploads .xlsx → server-side parser reads rows into memory','Validate: field completeness check (student ID, name, program, year); malformed rows returned with errors','Transform: map program codes to curriculum, generate pre-enlistment tokens, duplicate detection','Load: validated records inserted to SQL Server — activates online enlistment eligibility per semester'],
-    's37': ['24/7 online access — any device, any time, no in-person visit required','Browse published sections — room, time, faculty, remaining capacity displayed','Real-time slot availability — max 40 students/section, enforced at both app and database level','Slot request submission → Registrar approval workflow → automated email notification at each stage'],
-    's38': ['Semester-aware filtering — all metrics auto-filter to active semester (Leite 2025: used 3.4× more)','Live enlistment statistics per subject, section, program','Room utilization — automated % computation, peak usage identification','Faculty load distribution — visual vs CHED max, flags overloading immediately','Exportable reports for CHED compliance and complete audit trail'],
-    's42': ['5-point Likert questionnaire adapted from ISO 25010','Expert panel validation (3 IT experts) → pilot test (n=5) → Cronbach alpha ≥ 0.70 → full administration','45 respondents: 30 students, 10 faculty, 5 admin','Scores interpreted: ≥4.50=Excellent, 3.50–4.49=Very Good, 2.50–3.49=Good, 1.50–2.49=Fair'],
+    's35': ['Extract: Registrar uploads .xlsx → server-side parser reads rows into memory (Mansoor et al., 2022)','Validate: field completeness check (student ID, name, program, year); malformed rows returned with errors','Transform: map program codes to curriculum, generate pre-enlistment tokens, duplicate detection','Load: validated records inserted to SQL Server — activates online enlistment eligibility per semester'],
+    's37': ['24/7 online access — any device, any time, no in-person visit required (Martinez & Chen, 2023)','Browse published sections — room, time, faculty, remaining capacity displayed','Real-time slot availability — max 40 students/section, enforced at both app and database level (Diallo et al., 2024)','Slot request submission → Registrar approval workflow → automated email notification at each stage'],
+    's38': ['Semester-aware filtering — all metrics auto-filter to active semester (Leite, 2025: used 3.4× more)','Live enlistment statistics per subject, section, program','Room utilization — automated % computation, peak usage identification','Faculty load distribution — visual vs TESDA regulatory limit, flags overloading immediately','Exportable reports for TESDA compliance and complete audit trail'],
+    's42': ['5-point Likert questionnaire adapted from ISO 25010 (ISO/IEC 25010:2023; Suryadi & Sulistiyani, 2022)','Expert panel validation (3 IT experts) → pilot test (n=5) → Cronbach alpha ≥ 0.70 → full administration','45 respondents: 30 students, 10 faculty, 5 admin','Scores interpreted: ≥4.50=Excellent, 3.50–4.49=Very Good, 2.50–3.49=Good, 1.50–2.49=Fair'],
     's43': ['Comparable systems: 4.11–4.55 on ISO 25010 scale — all Very Good to Excellent','SEN-GEN target: ≥4.00 weighted mean','Leite (2025): systems ≥4.00 → 78% sustained adoption probability beyond first academic year','Scale: ≥4.50=Excellent · 3.50–4.49=Very Good · 2.50–3.49=Good · 1.50–2.49=Fair · 1.00–1.49=Poor'],
     's46': ['STI Alaminos — integrated digital platform, real-time reporting, data-driven planning','School Admin — real-time visibility into all institutional operations','Registrar — ETL, digital approvals, notifications drastically reduce manual transaction volume','Faculty — system-enforced load management, digital schedule view','Students (most direct) — 24/7 online access eliminates inequitable in-person requirement','Future Researchers — documented, replicable reference for PH private HEI enlistment system research'],
   }
