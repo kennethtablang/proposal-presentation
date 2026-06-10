@@ -1,122 +1,56 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import './styles/globals.css'
+import { usePresentation } from './hooks/usePresentation.js'
+import { useDarkMode } from './hooks/useDarkMode.js'
+import { slides } from './slides/index.js'
+import MeshBackground from './components/MeshBackground.jsx'
+import Sidebar from './components/Sidebar.jsx'
+import SlideEngine from './components/SlideEngine.jsx'
+import { TopBar, Controls, SpeakerNotes, KeyboardHint } from './components/Controls.jsx'
+import { ChevronRight } from 'lucide-react'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const { current, direction, total, goTo, next, prev, notesOpen, setNotesOpen } = usePresentation()
+  const [dark, setDark] = useDarkMode()
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const slide = slides[current]
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="app">
+      <MeshBackground />
+      <Sidebar current={current} goTo={goTo} open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      <div className="ticks"></div>
+      <main className="stage">
+        <TopBar
+          current={current}
+          dark={dark}
+          setDark={setDark}
+          notesOpen={notesOpen}
+          setNotesOpen={setNotesOpen}
+        />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="slide-area">
+          {!sidebarOpen && (
+            <button
+              className="sidebar-peek-btn"
+              onClick={() => setSidebarOpen(true)}
+              title="Show slide navigator"
+              aria-label="Show sidebar"
+            >
+              <ChevronRight size={14} />
+            </button>
+          )}
+          <div className="slide-wrapper">
+            <SlideEngine current={current} direction={direction} />
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        <Controls current={current} total={total} prev={prev} next={next} />
+      </main>
+
+      <SpeakerNotes slide={slide} open={notesOpen} />
+      <KeyboardHint />
+    </div>
   )
 }
-
-export default App
