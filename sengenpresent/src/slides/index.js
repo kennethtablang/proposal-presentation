@@ -1,4 +1,4 @@
-// Master slide registry — all 47 slides
+// Master slide registry — all 50 slides
 // Each: { id, section, sectionNum, title, component, notes }
 // Components are imported lazily by SlideEngine
 
@@ -48,9 +48,10 @@ export const slides = [
   // ── SECTION 05 ──────────────────────────────────────────────
   { id: 's24', section: '05', sectionTitle: 'Methodology',             type: 'divider', title: 'Methodology',                       notes: 'Section 5 — research design, FDD SDLC, data collection, and analytical tools.' },
   { id: 's25', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Research Design',                   notes: 'Descriptive-Developmental. Descriptive: documents existing procedures. Developmental: builds SEN-GEN through FDD.' },
-  { id: 's26', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Agile Feature-Driven Development',  notes: 'FDD chosen because SEN-GEN has 6 clearly bounded functional domains. Each feature independently designed, built, validated.' },
-  { id: 's27', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'FDD Phases 1–3',                   notes: 'Phase 1: domain model from interviews & observation. Phase 2: feature list (3 sets). Phase 3: dependency-based plan.' },
-  { id: 's28', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'FDD Phases 4–5',                   notes: 'Phase 4: ERD, API spec, CSP pseudocode, React components, flowcharts. Phase 5: unit → integration → UAT → ISO 25010 evaluation.' },
+  { id: 's26',  section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Agile Feature-Driven Development',    notes: 'FDD chosen because SEN-GEN has 6 clearly bounded functional domains. Each feature independently designed, built, validated.' },
+  { id: 's26b', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Agile FDD — Process Diagram',          notes: 'Visual diagram of the Agile Feature-Driven Development process model showing all 5 phases and their relationships.' },
+  { id: 's27',  section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'FDD Phases 1–3',                      notes: 'Phase 1: domain model from interviews & observation. Phase 2: feature list (3 sets). Phase 3: dependency-based plan.' },
+  { id: 's28',  section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'FDD Phases 4–5',                      notes: 'Phase 4: ERD, API spec, CSP pseudocode, React components, flowcharts. Phase 5: unit → integration → UAT → ISO 25010 evaluation.' },
   { id: 's29', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Data Collection',                  notes: 'Primary: structured interviews + observation. Secondary: institutional documents. Tertiary: internet-accessed academic literature.' },
   { id: 's30', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Tools for Data Analysis',           notes: 'Use Case Diagrams, Flowcharts, ERD, Database Schema, Likert Scale (5-point), Weighted Mean.' },
   { id: 's31', section: '05', sectionTitle: 'Methodology',             type: 'content', title: 'Respondents & Sampling',            notes: 'Purposive sampling. 45 respondents: 30 students, 10 faculty, 5 admin. Instrument validated by 3 IT experts + pilot test + Cronbach alpha ≥ 0.70.' },
@@ -63,7 +64,8 @@ export const slides = [
   { id: 's36', section: '06', sectionTitle: 'System Features & Architecture', type: 'content', title: 'Feature 2: Scheduling Engine', notes: 'CSP algorithm. Hard: no room double-booking, no faculty conflicts, CHED load limits. Soft: time preferences, load equity. Manual override with real-time conflict detection.' },
   { id: 's37', section: '06', sectionTitle: 'System Features & Architecture', type: 'content', title: 'Feature 3: Student Portal',   notes: '24/7 online access. Browse published schedules. Real-time slot availability (max 40/section). Request → Approval workflow → Email notification.' },
   { id: 's38', section: '06', sectionTitle: 'System Features & Architecture', type: 'content', title: 'Feature 4: Dashboard',        notes: 'Semester-aware. Live: enlistment stats, room utilization, faculty load distribution, pre-enrollment trends. Exportable reports for CHED compliance.' },
-  { id: 's39', section: '06', sectionTitle: 'System Features & Architecture', type: 'content', title: 'Features 5 & 6: Notifications + RBAC', notes: 'Automated emails for 6 lifecycle events. RBAC: 6 roles (School Admin, Academic Head, Registrar, Admission Officer, Faculty, Student). JWT + IIS SSL.' },
+  { id: 's39',  section: '06', sectionTitle: 'System Features & Architecture', type: 'content', title: 'Features 5 & 6: Notifications + RBAC', notes: 'Automated emails for 6 lifecycle events. RBAC: 6 roles (School Admin, Academic Head, Registrar, Admission Officer, Faculty, Student). JWT + IIS SSL.' },
+  { id: 's39b', section: '06', sectionTitle: 'System Features & Architecture', type: 'content', title: 'Additional System Features',           notes: 'Student-driven enlistment, Grid Schedule Views (PDF/XLSX), Automated Room Utilization Report, Automated Schedule Change Notifications, Automated Faculty Loading Report (PDF/XLSX).' },
 
   // ── SECTION 07 ──────────────────────────────────────────────
   { id: 's40', section: '07', sectionTitle: 'Evaluation Framework',    type: 'divider', title: 'Evaluation Framework',               notes: 'Section 7 — ISO/IEC 25010:2023 quality evaluation methodology and benchmarks.' },
@@ -75,5 +77,6 @@ export const slides = [
   { id: 's44', section: '08', sectionTitle: 'Significance & Summary',  type: 'divider', title: 'Significance & Summary',            notes: 'Final section — regulatory alignment, beneficiaries, and research summary.' },
   { id: 's45', section: '08', sectionTitle: 'Significance & Summary',  type: 'content', title: 'Regulatory & Policy Alignment',     notes: 'RA 10844 (DICT Act), CHED MO 46, RA 10173 (Data Privacy Act), UN SDG 4 (Quality Education), UN SDG 9 (Innovation & Infrastructure).' },
   { id: 's46', section: '08', sectionTitle: 'Significance & Summary',  type: 'content', title: 'Significance & Beneficiaries',      notes: 'STI Alaminos, School Admin, Academic Head, Registrar, Admission Officer, Faculty, Students (most direct), Future Researchers.' },
-  { id: 's47', section: '08', sectionTitle: 'Significance & Summary',  type: 'closing', title: 'Summary & Thank You',              notes: 'SEN-GEN is not merely a technological upgrade — it is an instrument of academic quality, institutional efficiency, and student-centered service delivery. Thank you, distinguished panel. I am ready for your questions.' },
+  { id: 's47', section: '08', sectionTitle: 'Significance & Summary',  type: 'content', title: 'Research Summary',                  notes: 'Condensed summary of SEN-GEN — research design, algorithm, architecture, evaluation framework, and regulatory alignment.' },
+  { id: 's48', section: '08', sectionTitle: 'Significance & Summary',  type: 'closing', title: 'Thank You',                         notes: 'SEN-GEN is not merely a technological upgrade — it is an instrument of academic quality, institutional efficiency, and student-centered service delivery. Thank you, distinguished panel. I am ready for your questions.' },
 ]

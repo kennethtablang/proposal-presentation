@@ -335,7 +335,7 @@ export function S13_Objectives() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         <strong style={{ fontStyle:'normal' }}>Main Objective:</strong> {mainObj}
       </div>
-      <div className="slide-body anim-fade-up delay-3 card-stagger" style={{ display:'flex', flexDirection:'column', gap:10, overflow:'hidden' }}>
+      <div className="slide-body anim-fade-up delay-3 card-stagger" style={{ display:'flex', flexDirection:'column', gap:10, overflow:'auto' }}>
         {objs.map((o,i) => (
           <div key={i} className="card" style={{ display:'flex', gap:16, padding:'14px 18px', borderLeft:`3px solid ${o.color}` }}>
             <div style={{ flexShrink:0 }}>
@@ -640,7 +640,7 @@ export function S36_Engine() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         The Academic Head initiates generation → CSP evaluates all constraints simultaneously → constraint propagation reduces search space → backtracking finds first fully satisfying assignment.
       </div>
-      <div className="row slide-body anim-fade-up delay-3 card-stagger" style={{ gap:12, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-3 card-stagger" style={{ gap:12, overflow:'auto' }}>
         <div className="card" style={{ borderColor:'var(--chip-red-t)' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'var(--chip-red-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Hard Constraints</div>
           {['No room double-booking','No faculty double-assignment','Room capacity ≥ enrollment','Load ≤ TESDA maximum','Subject-qualified faculty only'].map((t,i) => <div key={i} style={{ fontSize:22, color:'var(--text-secondary)', paddingLeft:16, position:'relative', marginBottom:5 }}><span style={{ position:'absolute', left:0, color:'var(--chip-red-t)' }}>✗</span>{t}</div>)}
@@ -798,6 +798,175 @@ export function GenericContent({ slide }) {
           <div key={i} className="card" style={{ padding:'13px 18px', display:'flex', gap:12, alignItems:'flex-start' }}>
             <div style={{ width:9, height:9, borderRadius:'50%', background:'var(--brand-gradient)', flexShrink:0, marginTop:8 }} />
             <div style={{ fontSize:24, color:'var(--text-secondary)', lineHeight:1.6 }}>{item}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ── S26b AGILE FDD IMAGE PLACEHOLDER ────────────────────────
+export function S26b_AgileImage() {
+  return (
+    <div className="slide-inner" style={{ gap:12 }}>
+      <div className="slide-heading anim-fade-up">Section 05 — Methodology</div>
+      <h2 className="slide-title-h anim-fade-up delay-1">Agile Feature-Driven Development — Process Model</h2>
+      <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+        <div className="framework-placeholder">
+          <FileImage size={48} style={{ color:'var(--text-muted)', marginBottom:16, flexShrink:0 }} />
+          <div style={{ fontSize:24, fontWeight:600, color:'var(--text-secondary)', marginBottom:8 }}>
+            Agile FDD Process Diagram
+          </div>
+          <div style={{ fontSize:18, color:'var(--text-muted)', lineHeight:1.6, textAlign:'center' }}>
+            Add your image to <code style={{ background:'var(--bg-card-alt)', padding:'2px 6px', borderRadius:4, fontSize:16 }}>src/assets/agile-fdd.png</code>
+            <br />then import and replace this block with an &lt;img&gt; tag.
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── S27 FDD PHASES 1–3 ───────────────────────────────────────
+export function S27_FDD13() {
+  const items = [
+    'Phase 1 — Domain Model: structured interviews + observation → ERD + architecture blueprint',
+    'Phase 2 — Features List: 3 feature sets (Enlistment Management, Scheduling, Admin Management)',
+    'Phase 3 — Plan by Feature: sequence by technical dependency — Infrastructure → Engine → Portal → Admin',
+  ]
+  return (
+    <div className="slide-inner" style={{ gap:12 }}>
+      <div className="slide-heading anim-fade-up">Section 05 — Methodology</div>
+      <h2 className="slide-title-h anim-fade-up delay-1">FDD Phases 1–3</h2>
+      <div className="anim-fade-up delay-2 card-stagger" style={{ display:'flex', flexDirection:'column', gap:10, flexShrink:0 }}>
+        {items.map((item, i) => (
+          <div key={i} className="card" style={{ padding:'13px 18px', display:'flex', gap:12, alignItems:'flex-start' }}>
+            <div style={{ width:32, height:32, borderRadius:8, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:16, fontWeight:800, color:'#fff', flexShrink:0 }}>{i+1}</div>
+            <div style={{ fontSize:23, color:'var(--text-secondary)', lineHeight:1.6 }}>{item}</div>
+          </div>
+        ))}
+      </div>
+      <div className="slide-body anim-fade-up delay-3" style={{ display:'flex', alignItems:'center', justifyContent:'center', border:'2px dashed rgba(255,255,255,0.15)', borderRadius:12, background:'rgba(255,255,255,0.03)' }}>
+        <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:10, padding:24 }}>
+          <FileImage size={42} style={{ color:'var(--text-muted)' }} />
+          <div style={{ fontSize:22, fontWeight:600, color:'var(--text-secondary)' }}>FDD Phases 1–3 Diagram</div>
+          <div style={{ fontSize:17, color:'var(--text-muted)', textAlign:'center' }}>
+            Add your image to <code style={{ background:'var(--bg-card-alt)', padding:'2px 5px', borderRadius:4 }}>src/assets/fdd-phases-1-3.png</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── S28 FDD PHASES 4–5 ───────────────────────────────────────
+export function S28_FDD45() {
+  const items = [
+    'Phase 4 — Design: ERD, REST API spec, CSP pseudocode, React component hierarchy, as-is/to-be flowcharts',
+    'Phase 5 — Build: unit tests → integration → UAT deployment → ISO 25010 questionnaire → weighted mean analysis',
+    'All design artifacts validated with STI Alaminos stakeholders before implementation',
+  ]
+  return (
+    <div className="slide-inner" style={{ gap:12 }}>
+      <div className="slide-heading anim-fade-up">Section 05 — Methodology</div>
+      <h2 className="slide-title-h anim-fade-up delay-1">FDD Phases 4–5</h2>
+      <div className="anim-fade-up delay-2 card-stagger" style={{ display:'flex', flexDirection:'column', gap:10, flexShrink:0 }}>
+        {items.map((item, i) => (
+          <div key={i} className="card" style={{ padding:'13px 18px', display:'flex', gap:12, alignItems:'flex-start' }}>
+            <div style={{ width:32, height:32, borderRadius:8, background:'linear-gradient(135deg,#e4b795,#d97706)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:16, fontWeight:800, color:'#fff', flexShrink:0 }}>{i+4}</div>
+            <div style={{ fontSize:23, color:'var(--text-secondary)', lineHeight:1.6 }}>{item}</div>
+          </div>
+        ))}
+      </div>
+      <div className="slide-body anim-fade-up delay-3" style={{ display:'flex', alignItems:'center', justifyContent:'center', border:'2px dashed rgba(255,255,255,0.15)', borderRadius:12, background:'rgba(255,255,255,0.03)' }}>
+        <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:10, padding:24 }}>
+          <FileImage size={42} style={{ color:'var(--text-muted)' }} />
+          <div style={{ fontSize:22, fontWeight:600, color:'var(--text-secondary)' }}>FDD Phases 4–5 Diagram</div>
+          <div style={{ fontSize:17, color:'var(--text-muted)', textAlign:'center' }}>
+            Add your image to <code style={{ background:'var(--bg-card-alt)', padding:'2px 5px', borderRadius:4 }}>src/assets/fdd-phases-4-5.png</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── S34 TECHNOLOGY STACK ─────────────────────────────────────
+export function S34_TechStack() {
+  const techs = [
+    { name:'React JS',              desc:'Component-based, 6 role-differentiated interfaces, reusable components', color:'var(--g2)' },
+    { name:'ASP.NET Core Web API',  desc:'Built-in DI, JWT middleware, cross-platform; high maintainability (ISO 25010)', color:'var(--g1)' },
+    { name:'Entity Framework Core', desc:'Code-first migrations, schema consistency, optimized raw queries for CSP engine', color:'var(--g3)' },
+    { name:'Microsoft SQL Server',  desc:'Referential integrity, transactional consistency, slot capacity enforcement at DB level', color:'var(--g2)' },
+    { name:'IIS',                   desc:'HTTP routing, SSL/TLS — Data Privacy Act (RA 10173) compliance', color:'var(--g1)' },
+  ]
+  return (
+    <div className="slide-inner" style={{ gap:10 }}>
+      <div className="slide-heading anim-fade-up">Section 06 — System</div>
+      <h2 className="slide-title-h anim-fade-up delay-1">Technology Stack</h2>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ display:'flex', flexDirection:'column', gap:9, overflow:'auto' }}>
+        {techs.map((t, i) => (
+          <div key={i} className="card" style={{ display:'flex', gap:14, padding:'10px 14px', borderLeft:`3px solid ${t.color}`, alignItems:'center' }}>
+            <div style={{ width:76, height:54, borderRadius:8, background:'rgba(255,255,255,0.04)', border:'1.5px dashed rgba(255,255,255,0.18)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+              <FileImage size={22} style={{ color:'var(--text-muted)' }} />
+            </div>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:23, fontWeight:700, color:'var(--text-primary)', marginBottom:3 }}>{t.name}</div>
+              <div style={{ fontSize:20, color:'var(--text-secondary)', lineHeight:1.4 }}>{t.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ── S39b ADDITIONAL SYSTEM FEATURES ──────────────────────────
+export function S39b_AdditionalFeatures() {
+  const features = [
+    { head:'Student-Driven Enlistment',                    body:'Students independently browse published sections, check real-time slot availability, and submit enlistment requests — eliminating the registrar walk-in requirement.',                                   color:'var(--g2)' },
+    { head:'Grid Schedule Views (PDF / XLSX Export)',       body:'Visual grid schedule for Faculty View, Classroom View, and Class Section View — exportable as PDF or Excel for offline review and TESDA compliance documentation.',                                     color:'var(--g1)' },
+    { head:'Automated Room Utilization Report',             body:'System auto-computes room usage percentage per semester, identifies peak periods, and generates downloadable reports — no manual tallying required.',                                                   color:'var(--g3)' },
+    { head:'Automated Schedule Change Notifications',       body:'Stakeholders receive instant email alerts when schedule revisions occur — eliminating word-of-mouth propagation and repeat registrar visits.',                                                           color:'var(--chip-amber-t)' },
+    { head:'Automated Faculty Loading Report (PDF / XLSX)', body:'Consolidated faculty workload report generated automatically each semester — downloadable as PDF or Excel with TESDA load-limit compliance flags.',                                                   color:'var(--chip-teal-t)' },
+  ]
+  return (
+    <div className="slide-inner" style={{ gap:10 }}>
+      <div className="slide-heading anim-fade-up">Section 06 — System</div>
+      <h2 className="slide-title-h anim-fade-up delay-1">Additional System Features</h2>
+      <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:9 }}>
+        {features.map((f, i) => (
+          <div key={i} className="card" style={{ padding:'13px 16px', borderLeft:`3px solid ${f.color}` }}>
+            <div style={{ fontSize:23, fontWeight:700, color:'var(--text-primary)', marginBottom:5 }}>{f.head}</div>
+            <div style={{ fontSize:21, color:'var(--text-secondary)', lineHeight:1.5 }}>{f.body}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ── S47 RESEARCH SUMMARY ─────────────────────────────────────
+export function S47_Summary() {
+  const summary = [
+    'Descriptive-Developmental + Agile Feature-Driven Development (FDD)',
+    'CSP Algorithm — conflict-free schedules replacing 18–22 day manual cycle',
+    'ETL XLSX import pre-authorizes students for 24/7 online enlistment',
+    '6 role-differentiated React JS interfaces — ASP.NET Core + SQL Server',
+    'Grid schedule views: Faculty, Classroom, Class Section (PDF/XLSX)',
+    'Automated notifications for all 6 enlistment lifecycle events',
+    'ISO/IEC 25010:2023 evaluation — target ≥4.00 weighted mean',
+    'Aligned with RA 10844, CHED MO 46, RA 10173, UN SDG 4 & SDG 9',
+  ]
+  return (
+    <div className="slide-inner" style={{ gap:12 }}>
+      <div className="slide-heading anim-fade-up">Section 08 — Significance & Summary</div>
+      <h2 className="slide-title-h anim-fade-up delay-1">Research Summary</h2>
+      <div className="grid-2 slide-body anim-fade-up delay-2 card-stagger" style={{ gap:10, overflow:'hidden' }}>
+        {summary.map((s, i) => (
+          <div key={i} style={{ display:'flex', gap:10, alignItems:'flex-start', padding:'12px 14px', background:'rgba(255,255,255,0.05)', borderRadius:10, border:'1px solid var(--border)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)' }}>
+            <div style={{ width:14, height:14, borderRadius:4, background:'var(--brand-gradient)', flexShrink:0, marginTop:5 }} />
+            <div style={{ fontSize:21, color:'var(--text-secondary)', lineHeight:1.5 }}>{s}</div>
           </div>
         ))}
       </div>

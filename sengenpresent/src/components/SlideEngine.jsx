@@ -6,8 +6,10 @@ import {
   S06_CoreProblem, S07_PhHEI, S08_WalkIn, S09_ManualSched,
   S10_Stakeholder, S11_Consequences, S13_Objectives, S14_IPO,
   S15_Scope, S18_LitStats, S20_CSP, S22_ISOBenchmarks,
-  S25_ResearchDesign, S31_Respondents, S33_Architecture,
-  S36_Engine, S39_NotifRBAC, S41_ISO, S45_Regulatory, GenericContent
+  S25_ResearchDesign, S26b_AgileImage, S27_FDD13, S28_FDD45,
+  S31_Respondents, S33_Architecture, S34_TechStack,
+  S36_Engine, S39_NotifRBAC, S39b_AdditionalFeatures,
+  S41_ISO, S45_Regulatory, S47_Summary, GenericContent
 } from '../slides/SlideContent.jsx'
 
 const CONTENT_MAP = {
@@ -15,8 +17,10 @@ const CONTENT_MAP = {
   s06: S06_CoreProblem, s07: S07_PhHEI, s08: S08_WalkIn, s09: S09_ManualSched,
   s10: S10_Stakeholder, s11: S11_Consequences, s13: S13_Objectives, s14: S14_IPO,
   s15: S15_Scope, s18: S18_LitStats, s20: S20_CSP, s22: S22_ISOBenchmarks,
-  s25: S25_ResearchDesign, s31: S31_Respondents, s33: S33_Architecture,
-  s36: S36_Engine, s39: S39_NotifRBAC, s41: S41_ISO, s45: S45_Regulatory,
+  s25: S25_ResearchDesign, s26b: S26b_AgileImage, s27: S27_FDD13, s28: S28_FDD45,
+  s31: S31_Respondents, s33: S33_Architecture, s34: S34_TechStack,
+  s36: S36_Engine, s39: S39_NotifRBAC, s39b: S39b_AdditionalFeatures,
+  s41: S41_ISO, s45: S45_Regulatory, s47: S47_Summary,
 }
 
 const variants = {
@@ -69,39 +73,28 @@ function ContentSlide({ slide }) {
 }
 
 function ClosingSlide() {
-  const summary = [
-    'Descriptive-Developmental + Agile Feature-Driven Development (FDD)',
-    'CSP Algorithm — conflict-free schedules replacing 18–22 day manual cycle',
-    'ETL XLSX import pre-authorizes students for 24/7 online enlistment',
-    '6 role-differentiated React JS interfaces — ASP.NET Core + SQL Server',
-    'Grid schedule views: Faculty, Classroom, Class Section',
-    'Automated notifications for all 6 enlistment lifecycle events',
-    'ISO/IEC 25010:2023 evaluation — target ≥4.00 weighted mean',
-    'Aligned with RA 10844, CHED MO 46, RA 10173, UN SDG 4 & SDG 9',
-  ]
   return (
-    <div className="slide slide-title" style={{ justifyContent:'flex-start' }}>
+    <div className="slide slide-title">
       <SlideBackground />
       <div className="slide-accent-bar" />
-      <div style={{ zIndex:1, display:'flex', flexDirection:'column', height:'100%', padding:'28px 36px' }}>
-        <div className="anim-fade-up" style={{ fontSize:20, fontWeight:700, letterSpacing:2, color:'rgba(228,183,149,0.7)', textTransform:'uppercase', marginBottom:8 }}>Research Summary</div>
-        <div className="anim-fade-up delay-1" style={{ fontSize:52, fontWeight:800, color:'#fff', marginBottom:4 }}>SEN-GEN</div>
-        <div className="anim-fade-up delay-2" style={{ fontSize:24, color:'rgba(255,255,255,0.5)', marginBottom:20 }}>Student Enlistment with Generative Scheduling System for STI Alaminos</div>
-        <div className="anim-fade-up delay-2" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, flex:1, overflow:'hidden' }}>
-          {summary.map((s,i) => (
-            <div key={i} style={{ display:'flex', gap:10, alignItems:'flex-start', padding:'10px 12px', background:'rgba(255,255,255,0.07)', borderRadius:8, border:'1px solid rgba(255,255,255,0.13)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', boxShadow:'inset 0 1px 0 rgba(255,255,255,0.08)' }}>
-              <div style={{ width:16, height:16, borderRadius:4, background:'var(--brand-gradient)', flexShrink:0, marginTop:4 }} />
-              <div style={{ fontSize:20, color:'rgba(255,255,255,0.7)', lineHeight:1.5 }}>{s}</div>
-            </div>
-          ))}
+      <div style={{ zIndex:1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'40px', textAlign:'center' }}>
+        <div className="anim-scale-in" style={{ width:100, height:100, borderRadius:24, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:38, fontWeight:800, color:'#fff', marginBottom:24, boxShadow:'0 12px 40px rgba(105,154,205,0.35)', letterSpacing:-1 }}>
+          SG
         </div>
-        <div className="anim-fade-up delay-3" style={{ marginTop:16, padding:'16px 22px', background:'rgba(105,154,205,0.10)', borderRadius:10, border:'1px solid rgba(105,154,205,0.28)', backdropFilter:'blur(16px)', WebkitBackdropFilter:'blur(16px)', boxShadow:'inset 0 1px 0 rgba(255,255,255,0.09)' }}>
-          <div style={{ fontSize:22, fontStyle:'italic', color:'rgba(255,255,255,0.6)', lineHeight:1.7, marginBottom:10 }}>
-            "SEN-GEN is not merely a technological upgrade — it is an instrument of academic quality, institutional efficiency, and student-centered service delivery."
-          </div>
-          <div style={{ fontSize:30, fontWeight:700, background:'var(--brand-gradient)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', textAlign:'center' }}>
-            Thank you. I am ready for your questions.
-          </div>
+        <div className="anim-fade-up delay-1" style={{ fontSize:20, fontWeight:700, letterSpacing:2.5, color:'rgba(228,183,149,0.7)', textTransform:'uppercase', marginBottom:16 }}>
+          SEN-GEN · Thesis Defense · June 2026
+        </div>
+        <h1 className="anim-fade-up delay-2" style={{ fontSize:88, fontWeight:800, color:'#fff', lineHeight:1.05, marginBottom:14, letterSpacing:-2 }}>
+          Thank You
+        </h1>
+        <div className="anim-fade-up delay-3" style={{ fontSize:21, color:'rgba(255,255,255,0.5)', marginBottom:28, lineHeight:1.7, maxWidth:580, fontStyle:'italic' }}>
+          "SEN-GEN is not merely a technological upgrade — it is an instrument of academic quality, institutional efficiency, and student-centered service delivery."
+        </div>
+        <div className="anim-fade-up delay-4" style={{ padding:'14px 36px', background:'var(--brand-gradient)', borderRadius:12, fontSize:22, fontWeight:700, color:'#fff', boxShadow:'0 8px 28px rgba(105,154,205,0.3)', marginBottom:20 }}>
+          I am ready for your questions.
+        </div>
+        <div className="anim-fade-up delay-4" style={{ fontSize:19, color:'rgba(255,255,255,0.3)' }}>
+          Kenneth Rey Rallustian Tablang · Universidad de Dagupan
         </div>
       </div>
     </div>
