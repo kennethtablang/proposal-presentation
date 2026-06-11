@@ -964,7 +964,7 @@ export function S47_Summary() {
       <h2 className="slide-title-h anim-fade-up delay-1">Research Summary</h2>
       <div className="grid-2 slide-body anim-fade-up delay-2 card-stagger" style={{ gap:10, overflow:'hidden' }}>
         {summary.map((s, i) => (
-          <div key={i} style={{ display:'flex', gap:10, alignItems:'flex-start', padding:'12px 14px', background:'rgba(255,255,255,0.05)', borderRadius:10, border:'1px solid var(--border)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)' }}>
+          <div key={i} className="card" style={{ display:'flex', gap:10, alignItems:'flex-start', padding:'12px 14px' }}>
             <div style={{ width:14, height:14, borderRadius:4, background:'var(--brand-gradient)', flexShrink:0, marginTop:5 }} />
             <div style={{ fontSize:21, color:'var(--text-secondary)', lineHeight:1.5 }}>{s}</div>
           </div>
