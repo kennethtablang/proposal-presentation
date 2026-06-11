@@ -125,13 +125,13 @@ export function S04_Context() {
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
         A TESDA-accredited Education Center serving IT and allied programs in Pangasinan — currently operating with fragmented manual enrollment processes (Document Submission, Registration, Enlistment, Tuition Payment) and no integrated digital platform to support them.
       </div>
-      <div className="grid-2 slide-body anim-fade-up delay-3 card-stagger" style={{ gap:10, overflow:'hidden' }}>
+      <div className="grid-2 slide-body anim-fade-up delay-3 card-stagger" style={{ gap:8, overflow:'auto' }}>
         {facts.map((f,i) => (
-          <div key={i} className="card" style={{ padding:'12px 16px', display:'flex', gap:14, alignItems:'flex-start' }}>
-            <f.Icon size={34} strokeWidth={1.5} style={{ flexShrink:0, color:'var(--g2)', marginTop:2 }} />
+          <div key={i} className="card" style={{ padding:'10px 14px', display:'flex', gap:12, alignItems:'flex-start' }}>
+            <f.Icon size={28} strokeWidth={1.5} style={{ flexShrink:0, color:'var(--g2)', marginTop:2 }} />
             <div>
-              <div style={{ fontSize:18, fontWeight:700, color:'var(--text-muted)', textTransform:'uppercase', letterSpacing:0.5, marginBottom:4 }}>{f.label}</div>
-              <div style={{ fontSize:22, color:'var(--text-secondary)', lineHeight:1.4 }}>{f.val}</div>
+              <div style={{ fontSize:16, fontWeight:700, color:'var(--text-muted)', textTransform:'uppercase', letterSpacing:0.5, marginBottom:3 }}>{f.label}</div>
+              <div style={{ fontSize:19, color:'var(--text-secondary)', lineHeight:1.4 }}>{f.val}</div>
             </div>
           </div>
         ))}
@@ -159,10 +159,10 @@ export function S06_CoreProblem() {
       <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {problems.map((p,i) => (
           <div key={i} className="problem-card" style={{ borderLeftColor: p.color, borderLeftWidth:3 }}>
-            <div className="prob-num" style={{ background: p.bg, color: p.color, width:34, height:34, fontSize:18 }}>{p.n}</div>
+            <div className="prob-num" style={{ background: p.bg, color: p.color, width:30, height:30, fontSize:16 }}>{p.n}</div>
             <div style={{ flex:1 }}>
-              <div style={{ fontSize:22, fontWeight:600, color:'var(--text-primary)', marginBottom:3 }}>{p.head}</div>
-              <div style={{ fontSize:20, color:'var(--text-secondary)', lineHeight:1.5 }}>{p.body}</div>
+              <div style={{ fontSize:19, fontWeight:600, color:'var(--text-primary)', marginBottom:2 }}>{p.head}</div>
+              <div style={{ fontSize:17, color:'var(--text-secondary)', lineHeight:1.45 }}>{p.body}</div>
             </div>
           </div>
         ))}
@@ -217,12 +217,12 @@ export function S08_WalkIn() {
       <h2 className="slide-title-h anim-fade-up delay-1" style={{ fontSize:44 }}>Enrollment Process — 4 Steps (As-Is)</h2>
       <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:7 }}>
         {steps.map((s,i) => (
-          <div key={i} className="glass-row" style={{ display:'flex', gap:14, padding:'11px 14px', alignItems:'flex-start' }}>
-            <div style={{ width:32, height:32, borderRadius:8, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:700, color:'#fff', flexShrink:0, marginTop:2 }}>{s.n}</div>
+          <div key={i} className="glass-row" style={{ display:'flex', gap:12, padding:'10px 12px', alignItems:'flex-start' }}>
+            <div style={{ width:28, height:28, borderRadius:8, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:16, fontWeight:700, color:'#fff', flexShrink:0, marginTop:2 }}>{s.n}</div>
             <div style={{ flex:1 }}>
-              <div style={{ fontSize:22, fontWeight:500, color:'var(--text-primary)', lineHeight:1.4 }}>{s.act}</div>
+              <div style={{ fontSize:19, fontWeight:500, color:'var(--text-primary)', lineHeight:1.4 }}>{s.act}</div>
             </div>
-            <div style={{ fontSize:19, color:'var(--chip-red-t)', background:'var(--chip-red)', borderRadius:6, padding:'4px 10px', lineHeight:1.4, maxWidth:280, textAlign:'right', flexShrink:0 }}>⚠ {s.issue}</div>
+            <div style={{ fontSize:16, color:'var(--chip-red-t)', background:'var(--chip-red)', borderRadius:6, padding:'4px 9px', lineHeight:1.4, maxWidth:260, textAlign:'right', flexShrink:0 }}>⚠ {s.issue}</div>
           </div>
         ))}
       </div>
@@ -273,15 +273,14 @@ export function S10_Stakeholder() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 02 — Background</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Stakeholder Impact Analysis</h2>
-      <div className="grid-2 slide-body anim-fade-up delay-2 card-stagger" style={{ gap:10, overflow:'hidden' }}>
+      <div className="grid-2 slide-body anim-fade-up delay-2 card-stagger" style={{ gap:8, overflow:'auto' }}>
         {roles.map((r,i) => (
           <div key={i} className="role-card" style={{ border: r.highlight ? '1px solid var(--chip-red-t)' : '1px solid var(--border)' }}>
-            <div style={{ display:'flex', gap:12, alignItems:'center', marginBottom:8 }}>
-              <r.Icon size={30} strokeWidth={1.5} style={{ color: r.highlight ? 'var(--chip-red-t)' : 'var(--g2)', flexShrink:0 }} />
-              <div style={{ fontSize:24, fontWeight:700, color:'var(--text-primary)' }}>{r.role}</div>
-              {/* {r.highlight && <span className="chip" style={{ background:'var(--chip-red)', color:'var(--chip-red-t)', marginLeft:'auto' }}>Most Affected</span>} */}
+            <div style={{ display:'flex', gap:10, alignItems:'center', marginBottom:6 }}>
+              <r.Icon size={26} strokeWidth={1.5} style={{ color: r.highlight ? 'var(--chip-red-t)' : 'var(--g2)', flexShrink:0 }} />
+              <div style={{ fontSize:21, fontWeight:700, color:'var(--text-primary)' }}>{r.role}</div>
             </div>
-            <div style={{ fontSize:21, color:'var(--text-secondary)', lineHeight:1.5 }}>{r.impact}</div>
+            <div style={{ fontSize:18, color:'var(--text-secondary)', lineHeight:1.5 }}>{r.impact}</div>
           </div>
         ))}
       </div>
@@ -400,20 +399,20 @@ export function S15_Scope() {
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 03 — Objectives & Framework</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Scope & Limitations</h2>
-      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:14, overflow:'hidden' }}>
-        <div className="card" style={{ padding:0, overflow:'hidden' }}>
-          <div style={{ background:'var(--chip-green)', color:'var(--chip-green-t)', padding:'12px 16px', fontSize:22, fontWeight:700 }}>✓ Within Scope</div>
-          <div style={{ padding:'14px 16px', display:'flex', flexDirection:'column', gap:6 }}>
-            {inScope.map((t,i) => <div key={i} style={{ fontSize:21, color:'var(--text-secondary)', paddingLeft:16, position:'relative' }}><span style={{ position:'absolute', left:0, color:'var(--chip-green-t)' }}>✓</span>{t}</div>)}
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:12, overflow:'auto' }}>
+        <div className="card" style={{ padding:0, overflow:'auto' }}>
+          <div style={{ background:'var(--chip-green)', color:'var(--chip-green-t)', padding:'10px 14px', fontSize:20, fontWeight:700 }}>✓ Within Scope</div>
+          <div style={{ padding:'12px 14px', display:'flex', flexDirection:'column', gap:5 }}>
+            {inScope.map((t,i) => <div key={i} style={{ fontSize:18, color:'var(--text-secondary)', paddingLeft:16, position:'relative' }}><span style={{ position:'absolute', left:0, color:'var(--chip-green-t)' }}>✓</span>{t}</div>)}
           </div>
         </div>
-        <div className="card" style={{ padding:0, overflow:'hidden' }}>
-          <div style={{ background:'var(--glass-card-alt)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', color:'var(--text-muted)', padding:'12px 16px', fontSize:22, fontWeight:700 }}>○ Deliberate Limitations</div>
-          <div style={{ padding:'14px 16px', display:'flex', flexDirection:'column', gap:12 }}>
+        <div className="card" style={{ padding:0, overflow:'auto' }}>
+          <div style={{ background:'var(--glass-card-alt)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', color:'var(--text-muted)', padding:'10px 14px', fontSize:20, fontWeight:700 }}>○ Deliberate Limitations</div>
+          <div style={{ padding:'12px 14px', display:'flex', flexDirection:'column', gap:10 }}>
             {outScope.map((t,i) => (
               <div key={i}>
-                <div style={{ fontSize:22, fontWeight:600, color:'var(--text-primary)' }}>{t.t}</div>
-                <div style={{ fontSize:19, color:'var(--text-muted)', marginTop:3, lineHeight:1.5 }}>{t.d}</div>
+                <div style={{ fontSize:20, fontWeight:600, color:'var(--text-primary)' }}>{t.t}</div>
+                <div style={{ fontSize:17, color:'var(--text-muted)', marginTop:2, lineHeight:1.5 }}>{t.d}</div>
               </div>
             ))}
           </div>
@@ -533,33 +532,33 @@ export function S22_ISOBenchmarks() {
 // ── S25 RESEARCH DESIGN ──────────────────────────────────────
 export function S25_ResearchDesign() {
   return (
-    <div className="slide-inner" style={{ gap:12 }}>
+    <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 05 — Methodology</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Research Design: Descriptive-Developmental</h2>
-      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:14, overflow:'hidden' }}>
+      <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0, fontSize:18 }}>
+        This combination moves the research from a data-grounded understanding of institutional problems to the systematic creation of a solution — ensuring SEN-GEN is institutionally relevant, not merely technically functional.
+      </div>
+      <div className="row slide-body anim-fade-up delay-3 card-stagger" style={{ gap:12, overflow:'auto' }}>
         <div className="card" style={{ borderTop:'3px solid var(--g2)' }}>
-          <div style={{ fontSize:20, fontWeight:700, color:'var(--g2)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Descriptive Dimension</div>
-          <div style={{ fontSize:26, fontWeight:600, color:'var(--text-primary)', marginBottom:10 }}>Document existing procedures</div>
-          <div style={{ fontSize:22, color:'var(--text-secondary)', lineHeight:1.7, marginBottom:12 }}>
+          <div style={{ fontSize:18, fontWeight:700, color:'var(--g2)', textTransform:'uppercase', letterSpacing:1, marginBottom:8 }}>Descriptive Dimension</div>
+          <div style={{ fontSize:22, fontWeight:600, color:'var(--text-primary)', marginBottom:8 }}>Document existing procedures</div>
+          <div style={{ fontSize:19, color:'var(--text-secondary)', lineHeight:1.6, marginBottom:10 }}>
             McCombes (2023): descriptive research systematically describes a situation without manipulating variables.
           </div>
-          <div style={{ fontSize:21, color:'var(--text-muted)', lineHeight:1.6 }}>
-            Applied: structured interviews with Registrar, Academic Head, faculty, students + direct non-participatory observation + document analysis → operational baseline for SEN-GEN requirements.
+          <div style={{ fontSize:18, color:'var(--text-muted)', lineHeight:1.6 }}>
+            Applied: structured interviews with Registrar, Academic Head, faculty, students + non-participatory observation + document analysis → operational baseline for SEN-GEN requirements.
           </div>
         </div>
         <div className="card" style={{ borderTop:'3px solid var(--g1)' }}>
-          <div style={{ fontSize:20, fontWeight:700, color:'var(--g1)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Developmental Dimension</div>
-          <div style={{ fontSize:26, fontWeight:600, color:'var(--text-primary)', marginBottom:10 }}>Build SEN-GEN iteratively</div>
-          <div style={{ fontSize:22, color:'var(--text-secondary)', lineHeight:1.7, marginBottom:12 }}>
+          <div style={{ fontSize:18, fontWeight:700, color:'var(--g1)', textTransform:'uppercase', letterSpacing:1, marginBottom:8 }}>Developmental Dimension</div>
+          <div style={{ fontSize:22, fontWeight:600, color:'var(--text-primary)', marginBottom:8 }}>Build SEN-GEN iteratively</div>
+          <div style={{ fontSize:19, color:'var(--text-secondary)', lineHeight:1.6, marginBottom:10 }}>
             Siedlecki (2020): developmental research is a systematic, iterative process of designing, building, and refining a product over time.
           </div>
-          <div style={{ fontSize:21, color:'var(--text-muted)', lineHeight:1.6 }}>
+          <div style={{ fontSize:18, color:'var(--text-muted)', lineHeight:1.6 }}>
             Applied: Agile FDD — 5 phases, each feature independently designed, built, and validated with stakeholder acceptance criteria before moving forward.
           </div>
         </div>
-      </div>
-      <div className="quote-box anim-fade-up delay-3" style={{ flexShrink:0 }}>
-        This combination moves the research from a data-grounded understanding of institutional problems to the systematic creation of a solution — ensuring SEN-GEN is institutionally relevant, not merely technically functional.
       </div>
     </div>
   )
@@ -607,18 +606,18 @@ export function S33_Architecture() {
     <div className="slide-inner" style={{ gap:12 }}>
       <div className="slide-heading anim-fade-up">Section 06 — System</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Three-Tier Web Architecture</h2>
-      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:12, overflow:'hidden' }}>
+      <div className="row slide-body anim-fade-up delay-2 card-stagger" style={{ gap:12, overflow:'auto' }}>
         {tiers.map((t,i) => (
-          <div key={i} className="card" style={{ padding:0, overflow:'hidden', borderTop:`3px solid ${t.color}` }}>
-            <div style={{ padding:'12px 16px', borderBottom:'1px solid var(--border)' }}>
-              <div style={{ fontSize:18, fontWeight:700, color:'var(--text-muted)', textTransform:'uppercase', letterSpacing:1 }}>{t.n}</div>
-              <div style={{ fontSize:26, fontWeight:700, color:'var(--text-primary)' }}>{t.label}</div>
-              <div className="chip" style={{ background:`${t.color}22`, color: t.color, marginTop:6 }}>{t.tech}</div>
+          <div key={i} className="card" style={{ padding:0, overflow:'auto', borderTop:`3px solid ${t.color}` }}>
+            <div style={{ padding:'10px 14px', borderBottom:'1px solid var(--border)' }}>
+              <div style={{ fontSize:16, fontWeight:700, color:'var(--text-muted)', textTransform:'uppercase', letterSpacing:1 }}>{t.n}</div>
+              <div style={{ fontSize:22, fontWeight:700, color:'var(--text-primary)' }}>{t.label}</div>
+              <div className="chip" style={{ background:`${t.color}22`, color: t.color, marginTop:4, fontSize:14 }}>{t.tech}</div>
             </div>
-            <div style={{ padding:'12px 16px', display:'flex', flexDirection:'column', gap:6 }}>
+            <div style={{ padding:'10px 14px', display:'flex', flexDirection:'column', gap:5 }}>
               {t.items.map((item,j) => (
-                <div key={j} style={{ fontSize:20, color:'var(--text-secondary)', paddingLeft:14, position:'relative', lineHeight:1.4 }}>
-                  <span style={{ position:'absolute', left:0, color: t.color, fontSize:14, top:4 }}>▸</span>
+                <div key={j} style={{ fontSize:18, color:'var(--text-secondary)', paddingLeft:14, position:'relative', lineHeight:1.4 }}>
+                  <span style={{ position:'absolute', left:0, color: t.color, fontSize:13, top:3 }}>▸</span>
                   {item}
                 </div>
               ))}
@@ -647,7 +646,7 @@ export function S36_Engine() {
         <div className="card" style={{ borderColor:'var(--chip-teal-t)' }}>
           <div style={{ fontSize:19, fontWeight:700, color:'var(--chip-teal-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:10 }}>Soft Constraints</div>
           {['Faculty time preferences honored','Minimized idle gaps between classes','Equitable load distribution'].map((t,i) => <div key={i} style={{ fontSize:22, color:'var(--text-secondary)', paddingLeft:16, position:'relative', marginBottom:5 }}><span style={{ position:'absolute', left:0, color:'var(--chip-teal-t)' }}>◎</span>{t}</div>)}
-          <div style={{ marginTop:14, fontSize:21, fontWeight:700, color:'var(--chip-amber-t)', background:'var(--chip-amber)', borderRadius:8, padding:'10px 12px', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)', border:'1px solid rgba(217,119,6,0.25)' }}>
+          <div style={{ marginTop:14, fontSize:16, fontWeight:600, color:'var(--chip-amber-t)', background:'var(--chip-amber)', borderRadius:8, padding:'10px 12px', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)', border:'1px solid rgba(217,119,6,0.25)', lineHeight:1.5 }}>
             Manual Override — Academic Head can override any assignment. Real-time conflict detection active. Validated: Zhou (2025) — ~12% overrides needed in real-world deployments.
           </div>
         </div>
@@ -936,9 +935,9 @@ export function S39b_AdditionalFeatures() {
       <h2 className="slide-title-h anim-fade-up delay-1">Additional System Features</h2>
       <div className="slide-body anim-fade-up delay-2 card-stagger" style={{ overflow:'auto', display:'flex', flexDirection:'column', gap:9 }}>
         {features.map((f, i) => (
-          <div key={i} className="card" style={{ padding:'13px 16px', borderLeft:`3px solid ${f.color}` }}>
-            <div style={{ fontSize:23, fontWeight:700, color:'var(--text-primary)', marginBottom:5 }}>{f.head}</div>
-            <div style={{ fontSize:21, color:'var(--text-secondary)', lineHeight:1.5 }}>{f.body}</div>
+          <div key={i} className="card" style={{ padding:'10px 14px', borderLeft:`3px solid ${f.color}` }}>
+            <div style={{ fontSize:20, fontWeight:700, color:'var(--text-primary)', marginBottom:3 }}>{f.head}</div>
+            <div style={{ fontSize:18, color:'var(--text-secondary)', lineHeight:1.5 }}>{f.body}</div>
           </div>
         ))}
       </div>
@@ -950,9 +949,9 @@ export function S39b_AdditionalFeatures() {
 export function S47_Summary() {
   const summary = [
     'Descriptive-Developmental + Agile Feature-Driven Development (FDD)',
-    'Digitizes all 4 enrollment steps: Document Submission, Registration, Enlistment, Tuition Payment reference',
+    'Digitizes all 4 enrollment steps: Document Submission, Registration, Enlistment, Tuition Payment',
     'Digital enrollment requirements checklist replaces manual Admission Officer document verification',
-    'CSP Algorithm — conflict-free schedules enforcing TESDA + STI Policy load limits',
+    'CSP Algorithm — conflict-free schedules enforcing both STI Policy load limits',
     'ETL XLSX import pre-authorizes students for 24/7 online enrollment portal',
     '6 role-differentiated React JS interfaces — ASP.NET Core + SQL Server',
     'Grid schedule views: Faculty, Classroom, Class Section (PDF/XLSX)',
