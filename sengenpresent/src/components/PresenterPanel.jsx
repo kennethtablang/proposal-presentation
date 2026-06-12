@@ -166,7 +166,9 @@ export default function PresenterPanel({ current, direction, total, goTo, next, 
               border:`1px solid ${panelBorder}`, minHeight:0,
             }}>
               {slide.notes
-                ? slide.notes
+                ? slide.notes.split('\n\n').map((para, i) => (
+                    <p key={i} style={{ margin:'0 0 12px' }}>{para}</p>
+                  ))
                 : <em style={{ color:'rgba(255,255,255,0.25)' }}>No notes for this slide.</em>
               }
             </div>

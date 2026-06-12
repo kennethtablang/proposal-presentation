@@ -1314,7 +1314,7 @@ export function S36b_CSP() {
   return (
     <div className="slide-inner" style={{ gap:10 }}>
       <div className="slide-heading anim-fade-up">Section 06 — System (Detail)</div>
-      <h2 className="slide-title-h anim-fade-up delay-1">CSP Engine — Technical Architecture</h2>
+      <h2 className="slide-title-h anim-fade-up delay-1">CSP-Based Generative Scheduling Engine</h2>
       <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', gap:12, overflow:'auto' }}>
 
         {/* Left: CSP formulation */}

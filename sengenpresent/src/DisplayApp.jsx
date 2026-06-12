@@ -8,7 +8,15 @@ export default function DisplayApp() {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(1)
   const [ready, setReady] = useState(false)
+  const [mousePos, setMousePos] = useState({ x: -100, y: -100 })
   const prevRef = useRef(0)
+
+  useEffect(() => {
+    if (!ready) return
+    const handler = (e) => setMousePos({ x: e.clientX, y: e.clientY })
+    window.addEventListener('mousemove', handler)
+    return () => window.removeEventListener('mousemove', handler)
+  }, [ready])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-mode', 'display')
@@ -40,12 +48,21 @@ export default function DisplayApp() {
   return (
     <div
       onClick={handleClick}
-      style={{ width:'100vw', height:'100vh', background:'#111827', position:'relative', overflow:'hidden', cursor: ready ? 'none' : 'pointer' }}
+      style={{ width:'100vw', height:'100vh', background:'#111827', position:'relative', overflow:'hidden', cursor: ready ? 'none' : 'default' }}
     >
       <MeshBackground />
       <SlideScaler>
         <SlideEngine current={current} direction={direction} />
       </SlideScaler>
+
+      {ready && (
+        <div style={{
+          position:'fixed', left: mousePos.x, top: mousePos.y,
+          width:14, height:14, borderRadius:'50%', background:'#ef4444',
+          transform:'translate(-50%, -50%)', pointerEvents:'none', zIndex:9999,
+          boxShadow:'0 0 8px rgba(239,68,68,0.7), 0 0 2px rgba(0,0,0,0.5)',
+        }} />
+      )}
 
       {!ready && (
         <div style={{

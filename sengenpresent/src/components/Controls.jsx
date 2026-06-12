@@ -94,7 +94,11 @@ export function SpeakerNotes({ slide, open }) {
   return (
     <div className={`notes-panel${open ? ' open' : ''}`} role="region" aria-label="Speaker notes">
       <div className="notes-title">Speaker Notes — {slide.title}</div>
-      <div className="notes-text">{slide.notes || 'No speaker notes for this slide.'}</div>
+      <div className="notes-text">
+        {slide.notes
+          ? slide.notes.split('\n\n').map((para, i) => <p key={i} style={{ margin:'0 0 10px' }}>{para}</p>)
+          : 'No speaker notes for this slide.'}
+      </div>
     </div>
   )
 }
