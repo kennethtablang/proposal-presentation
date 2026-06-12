@@ -32,11 +32,23 @@ export function usePresentation() {
         goTo(0)
       } else if (e.key === 'End') {
         goTo(total - 1)
+      } else if (e.key === 'e' || e.key === 'E') {
+        const idx = slides.findIndex(s => s.id === 's_evidence')
+        if (idx !== -1) goTo(idx)
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [next, prev, goTo, total])
+
+  useEffect(() => {
+    const onGotoCSP = () => {
+      const idx = slides.findIndex(s => s.id === 's36b')
+      if (idx !== -1) goTo(idx)
+    }
+    window.addEventListener('goto-csp', onGotoCSP)
+    return () => window.removeEventListener('goto-csp', onGotoCSP)
+  }, [goTo])
 
   return { current, direction, total, goTo, next, prev, notesOpen, setNotesOpen }
 }

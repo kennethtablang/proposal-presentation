@@ -1,19 +1,21 @@
 import { slides, SECTIONS } from '../slides/index.js'
 import { X } from 'lucide-react'
+import proctorLogo from '../assets/proctor (4).png'
 
 export default function Sidebar({ current, goTo, open, onClose }) {
+  const visibleSlides = slides.filter(s => !s.hidden)
   const progress = ((current + 1) / slides.length) * 100
 
   const grouped = SECTIONS.map(sec => ({
     ...sec,
-    slides: slides.filter(s => s.section === sec.num),
+    slides: slides.filter(s => s.section === sec.num && !s.hidden),
   }))
 
   return (
     <aside className={`sidebar${!open ? ' hidden' : ''}`}>
       {/* Header */}
       <div className="sidebar-header">
-        <div className="logo-mark">SG</div>
+        <img src={proctorLogo} alt="SEN-GEN Logo" className="logo-mark" style={{ objectFit:'contain', padding:4, background:'transparent' }} />
         <div className="logo-text">
           <div className="logo-title">SEN-GEN</div>
           <div className="logo-sub">Thesis Defense Presentation</div>

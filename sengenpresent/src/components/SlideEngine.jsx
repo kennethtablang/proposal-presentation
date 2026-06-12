@@ -7,9 +7,9 @@ import {
   S10_Stakeholder, S11_Consequences, S13_Objectives, S14_IPO,
   S15_Scope, S18_LitStats, S20_CSP, S22_ISOBenchmarks,
   S25_ResearchDesign, S26b_AgileImage, S27_FDD13, S28_FDD45,
-  S31_Respondents, S33_Architecture, S34_TechStack,
-  S36_Engine, S39_NotifRBAC, S39b_AdditionalFeatures,
-  S41_ISO, S45_Regulatory, S47_Summary, GenericContent
+  S30_DataTools, S31_Respondents, S33_Architecture, S34_TechStack,
+  S36_Engine, S36b_CSP, S39_NotifRBAC, S39b_AdditionalFeatures,
+  S41_ISO, S45_Regulatory, S47_Summary, S_Evidence, GenericContent
 } from '../slides/SlideContent.jsx'
 
 const CONTENT_MAP = {
@@ -18,9 +18,9 @@ const CONTENT_MAP = {
   s10: S10_Stakeholder, s11: S11_Consequences, s13: S13_Objectives, s14: S14_IPO,
   s15: S15_Scope, s18: S18_LitStats, s20: S20_CSP, s22: S22_ISOBenchmarks,
   s25: S25_ResearchDesign, s26b: S26b_AgileImage, s27: S27_FDD13, s28: S28_FDD45,
-  s31: S31_Respondents, s33: S33_Architecture, s34: S34_TechStack,
-  s36: S36_Engine, s39: S39_NotifRBAC, s39b: S39b_AdditionalFeatures,
-  s41: S41_ISO, s45: S45_Regulatory, s47: S47_Summary,
+  s30: S30_DataTools, s31: S31_Respondents, s33: S33_Architecture, s34: S34_TechStack,
+  s36: S36_Engine, s36b: S36b_CSP, s39: S39_NotifRBAC, s39b: S39b_AdditionalFeatures,
+  s41: S41_ISO, s45: S45_Regulatory, s47: S47_Summary, s_evidence: S_Evidence,
 }
 
 const variants = {

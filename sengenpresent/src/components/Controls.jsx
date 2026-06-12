@@ -98,7 +98,7 @@ export function KeyboardHint() {
       borderRadius:8, padding:'4px 8px',
       boxShadow:'var(--shadow-sm)',
     }}>
-      <span>← → navigate &nbsp;·&nbsp; N notes &nbsp;·&nbsp; Home/End</span>
+      <span>← → navigate &nbsp;·&nbsp; N notes &nbsp;·&nbsp; E evidence &nbsp;·&nbsp; Home/End</span>
     </div>
   )
 }
