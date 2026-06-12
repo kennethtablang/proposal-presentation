@@ -1030,7 +1030,6 @@ export function S28_FDD45() {
   const items = [
     'Phase 4 — Design: ERD, REST API spec, CSP pseudocode, React component hierarchy, as-is/to-be flowcharts',
     'Phase 5 — Build: unit tests → integration → UAT deployment → ISO 25010 questionnaire → weighted mean analysis',
-    'All design artifacts validated with STI Alaminos stakeholders before implementation',
   ]
   return (
     <div className="slide-inner" style={{ gap:12 }}>
