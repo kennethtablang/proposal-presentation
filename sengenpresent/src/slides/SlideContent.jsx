@@ -74,12 +74,14 @@ export function S02_Outline() {
 // ── S03 RESEARCHER ───────────────────────────────────────────
 export function S03_Researcher() {
   const details = [
-    { label:'Program',     val:'Master in Information Technology (MIT)' },
-    { label:'Institution', val:'Universidad de Dagupan — School of Professional Studies' },
-    { label:'Campus',      val:'Arellano Street, Dagupan City, Pangasinan' },
-    { label:'Adviser',     val:'Rochelle Sotelo Lanto, MIT' },
-    { label:'Study Site',  val:'STI Alaminos — Alaminos City, Pangasinan' },
-    { label:'Stack',       val:'React JS · ASP.NET Core · SQL Server · Entity Framework Core' },
+    { label:'Date of Birth',  val:'June 12, 2001' },
+    { label:'Age',            val:'25 yrs old' },
+    { label:'Address',        val:'Brgy. Bolaney, Alaminos City, Pangasinan' },
+    { label:"Bachelor's",     val:'Pangasinan State University — Alaminos City Campus (Batch 2023)' },
+    { label:'Teaching Exp.',  val:'2.5 years' },
+    { label:'Web Content Mgmt. Exp. (Overseas)', val:'1 year' },
+    { label:'Dev. Exp. (Freelance)', val:'3 years' },
+    { label:'Stack',          val:'React JS · ASP.NET Core · SQL · EF Core' },
   ]
   return (
     <div className="slide-inner">
