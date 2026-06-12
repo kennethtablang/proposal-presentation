@@ -11,6 +11,11 @@ export default function DisplayApp() {
   const prevRef = useRef(0)
 
   useEffect(() => {
+    document.documentElement.setAttribute('data-mode', 'display')
+    return () => document.documentElement.removeAttribute('data-mode')
+  }, [])
+
+  useEffect(() => {
     const ch = new BroadcastChannel('senger-presenter')
     ch.onmessage = (e) => {
       if (e.data.type === 'slide') {

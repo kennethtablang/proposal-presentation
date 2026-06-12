@@ -62,12 +62,12 @@ function DividerSlide({ slide }) {
 }
 
 function ContentSlide({ slide }) {
-  const Content = CONTENT_MAP[slide.id] || (() => <GenericContent slide={slide} />)
+  const Content = CONTENT_MAP[slide.id]
   return (
     <div className="slide">
       <SlideBackground />
       <div className="slide-accent-bar" />
-      <Content />
+      {Content ? <Content /> : <GenericContent slide={slide} />}
     </div>
   )
 }

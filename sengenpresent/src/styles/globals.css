@@ -1188,3 +1188,10 @@ body { font-family: 'Poppins', sans-serif; }
   .notes-panel { max-height: 140px; }
   .sidebar-progress { padding: 8px 12px; }
 }
+
+/* ─── DISPLAY / FULLSCREEN MODE ─────────────────────────── */
+[data-mode="display"] .slide {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
