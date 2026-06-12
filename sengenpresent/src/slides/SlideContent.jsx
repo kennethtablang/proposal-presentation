@@ -4,6 +4,9 @@
 import {
   Building2, MapPin, BookOpen, Landmark, ClipboardList, Calendar, Layers, UserPlus, GraduationCap,
   FileImage,
+  Users, User, Settings, List, Code2, CheckCircle, RefreshCw,
+  FileCheck, FileText, CalendarCheck, ListChecks, BarChart2, PieChart,
+  ScrollText, Target, Zap, TrendingUp, Clock, Award, Pencil, Cpu, Shield, Smile,
 } from 'lucide-react'
 import proctorLogo  from '../assets/proctor (4).png'
 import kennethPhoto from '../assets/kenneth pogi.png'
@@ -94,13 +97,13 @@ export function S03_Researcher() {
             alt="Kenneth Rey Rallustian Tablang"
             style={{ width:160, height:160, borderRadius:24, objectFit:'cover', boxShadow:'var(--shadow-lg)', border:'3px solid var(--g2)' }}
           />
-          <div style={{ fontSize:20, fontWeight:600, color:'var(--text-muted)', textAlign:'center', lineHeight:1.4 }}>Kenneth Rey<br/>Rallustian Tablang</div>
+          <div style={{ fontSize:20, fontWeight:600, textAlign:'center', lineHeight:1.4 }}>Kenneth Rey<br/>Rallustian Tablang</div>
           <div style={{ fontSize:18, color:'var(--text-muted)', textAlign:'center' }}>Researcher / Developer</div>
         </div>
         <div style={{ flex:1, display:'flex', flexDirection:'column', gap:0 }}>
           {details.map((d,i) => (
             <div key={i} style={{ display:'flex', gap:16, padding:'12px 0', borderBottom:'1px solid var(--border)' }}>
-              <div style={{ fontSize:20, fontWeight:600, color:'var(--text-muted)', width:120, flexShrink:0 }}>{d.label}</div>
+              <div style={{ fontSize:20, fontWeight:600, color:'var(--text-muted)', width:160, flexShrink:0 }}>{d.label}</div>
               <div style={{ fontSize:22, color:'var(--text-secondary)', lineHeight:1.5 }}>{d.val}</div>
             </div>
           ))}
@@ -125,7 +128,7 @@ export function S04_Context() {
       <div className="slide-heading anim-fade-up">Section 01 — Opening</div>
       <h2 className="slide-title-h anim-fade-up delay-1">STI Alaminos — Study Locale</h2>
       <div className="quote-box anim-fade-up delay-2" style={{ flexShrink:0 }}>
-        A TESDA-accredited Education Center serving IT and allied programs in Pangasinan — currently operating with fragmented manual enrollment processes (Document Submission, Registration, Enlistment, Tuition Payment) and no integrated digital platform to support them.
+        A TESDA-accredited Education Center serving IT, HRA, and HRS programs in Pangasinan — currently operating with fragmented manual enrollment processes (Document Submission, Registration, Enlistment) and no integrated digital platform to support them.
       </div>
       <div className="grid-2 slide-body anim-fade-up delay-3 card-stagger" style={{ gap:8, overflow:'auto' }}>
         {facts.map((f,i) => (
@@ -146,7 +149,7 @@ export function S04_Context() {
 export function S06_CoreProblem() {
   const problems = [
     { n:1, head:'No Integrated Digital Enrollment Platform',               color:'var(--chip-red-t)',    bg:'var(--chip-red)',    body:'All four enrollment steps — Document Submission, Registration, Enlistment, and Tuition Payment — are handled manually with paper forms and spreadsheets. No unified digital flow exists.' },
-    { n:2, head:'Problematic Online Registration Portal (apply.sti.edu)',  color:'var(--chip-amber-t)',  bg:'var(--chip-amber)',  body:'Portal exists but Admission Officer opts not to use it: no terms & conditions on submission, student names forced to lowercase, no document checklist, no upload capability, no confirmation email, no save-progress feature, and no enrollment term selection.' },
+    { n:2, head:'Issues on Online Registration Portal (apply.sti.edu)',  color:'var(--chip-amber-t)',  bg:'var(--chip-amber)',  body:'Portal exists but Admission Officer opts not to use it: no terms & conditions on submission, student names forced to lowercase, no document/requirement checklist, and no confirmation email.' },
     { n:3, head:'No Document Submission Checklist',                        color:'var(--chip-orange-t)', bg:'var(--chip-orange)', body:'Admission Officer manually verifies required papers (Form 137, birth certificate, good moral certificate, etc.) with no digital checklist — missing documents discovered late, incomplete records risk.' },
     { n:4, head:'Faculty Load Policy Conflict (TESDA vs STI Policy)',      color:'var(--chip-green-t)',  bg:'var(--chip-green)',  body:'STI Alaminos relies on STI corporate policy for faculty loading but does not factor in TESDA subject loading rules. No automated enforcement of either standard — compliance risk on both fronts.' },
     { n:5, head:'Manual Class Schedule Construction',                      color:'var(--chip-purple-t)', bg:'var(--chip-purple)', body:'Spreadsheet-based scheduling with no conflict detection. Double-bookings surface only after student distribution. 18–22 working days per semester scheduling cycle.' },
@@ -267,7 +270,7 @@ export function S10_Stakeholder() {
     { Icon: Building2,    role:'School Admin',      impact:'Cannot access real-time data — relies on outdated manually compiled reports, blocking informed decisions.' },
     { Icon: Layers,       role:'Academic Head',     impact:'Must manually cross-reference curriculum, faculty preferences, and room availability every semester.' },
     { Icon: ClipboardList,role:'Registrar',         impact:'Processes every enlistment request manually — receiving forms, verifying capacities, recording approvals, updating counts.' },
-    { Icon: UserPlus,     role:'Admission Officer', impact:'Manually verifies enrollment requirements (Form 137, birth cert, good moral cert) against no digital checklist. Uses spreadsheets and paper forms for student registration — no pre-authorization workflow or document tracking system.' },
+    { Icon: UserPlus,     role:'Admission Officer', impact:'Manually verifies enrollment requirements (Form 137, birth cert, good moral cert) against no digital checklist. Uses spreadsheets and paper forms for student registration — no pre-authorization workflow or document checklist system.' },
     { Icon: GraduationCap,role:'Faculty Members',   impact:'No digital schedule view, no system-enforced load compliance monitoring.' },
     { Icon: BookOpen,     role:'Students',          impact:'Cannot enlist without in-person visit. Students with jobs or constraints face recurring structural disadvantage.', highlight:true },
   ]
@@ -294,8 +297,8 @@ export function S10_Stakeholder() {
 export function S11_Consequences() {
   const cols = [
     { label:'Short-Term',  color:'var(--chip-amber-t)', bg:'var(--chip-amber)', items:['Hidden costs from scheduling conflicts consuming staff time each cycle','Enlistment queues degrade student experience','TESDA load guideline violations — compliance risk','Registrar capacity exceeded at peak periods'] },
-    { label:'Medium-Term', color:'var(--chip-red-t)',   bg:'var(--chip-red)',   items:['Risk of falling behind TESDA institutional quality audit standards','Students face sustained inequitable access','Faculty dissatisfaction and potential attrition','Growing populations exceed sustainable admin capacity'] },
-    { label:'Long-Term',   color:'var(--chip-navy-t)',  bg:'var(--chip-navy)', items:['Compounding institutional credibility gap vs peers','No historical data for evidence-based planning','Persistent gap from CHED quality benchmarks','Missed opportunity to serve UN SDG 4 mandate'] },
+    { label:'Medium-Term', color:'var(--chip-red-t)',   bg:'var(--chip-red)',   items:['Risk of falling behind STI institutional quality audit standards','Students face sustained inequitable access','Faculty dissatisfaction and potential attrition','Growing populations exceed sustainable admin capacity'] },
+    { label:'Long-Term',   color:'var(--chip-navy-t)',  bg:'var(--chip-navy)', items:['Compounding institutional credibility gap vs peers','No historical data for evidence-based planning','Persistent gap from STI quality benchmarks','Missed opportunity to serve UN SDG 4 mandate'] },
   ]
   return (
     <div className="slide-inner" style={{ gap:10 }}>
@@ -354,34 +357,197 @@ export function S13_Objectives() {
 }
 
 // ── S14 IPO FRAMEWORK ────────────────────────────────────────
-// To use your own framework image:
-//   1. Add the file to src/assets/ (e.g. framework.png)
-//   2. Import it: import frameworkImg from '../assets/framework.png'
-//   3. Replace the placeholder <div> below with:
-//      <img src={frameworkImg} alt="Conceptual Framework" className="framework-img" />
 export function S14_IPO() {
+  const dataInputs = [
+    { Icon: Users,         label: 'Student Profiles' },
+    { Icon: BookOpen,      label: 'Subject Records' },
+    { Icon: GraduationCap, label: 'Faculty Profiles' },
+    { Icon: Building2,     label: 'Room Records' },
+    { Icon: Calendar,      label: 'Academic Calendar' },
+    { Icon: Settings,      label: 'System Parameters' },
+  ]
+  const userInputs = [
+    { Icon: User,          label: 'Students' },
+    { Icon: ClipboardList, label: 'Registrar' },
+    { Icon: UserPlus,      label: 'Admission Officer' },
+    { Icon: GraduationCap, label: 'Faculty Members' },
+    { Icon: Layers,        label: 'Academic Head' },
+    { Icon: Shield,        label: 'School Admin' },
+  ]
+  const fddLinear = [
+    { n: 1, Icon: Cpu,     label: 'Develop Overall Model' },
+    { n: 2, Icon: List,    label: 'Build Feature List' },
+    { n: 3, Icon: MapPin,  label: 'Plan by Feature' },
+  ]
+  const fddIterative = [
+    { n: 4, Icon: Pencil,  label: 'Design by Feature' },
+    { n: 5, Icon: Code2,   label: 'Build by Feature' },
+  ]
+  const engineItems = [
+    { Icon: CalendarCheck, label: 'Academic Schedule' },
+    { Icon: Clock,         label: 'Availability' },
+    { Icon: Building2,     label: 'Rooms' },
+    { Icon: GraduationCap, label: 'Faculty' },
+    { Icon: TrendingUp,    label: 'Demand' },
+  ]
+  const sysOutputs = [
+    { Icon: FileCheck,     label: 'Document Submission Records & Checklist Tracker' },
+    { Icon: FileText,      label: 'SIS Registration Confirmation' },
+    { Icon: CalendarCheck, label: 'Optimized Class Schedule' },
+    { Icon: ListChecks,    label: 'Student Enlistment Results' },
+    { Icon: BarChart2,     label: 'Faculty Load Summary' },
+    { Icon: PieChart,      label: 'Room Utilization Report' },
+    { Icon: ScrollText,    label: 'Academic Reports & Audit Logs' },
+  ]
+  const benefits = [
+    { Icon: CheckCircle,   label: 'Reduced Scheduling Conflicts & Manual Workload' },
+    { Icon: Target,        label: 'Improved Accuracy & Fairness in Schedules' },
+    { Icon: Smile,         label: 'Enhanced Student Experience' },
+    { Icon: Zap,           label: 'Optimized Use of Institutional Resources' },
+    { Icon: TrendingUp,    label: 'Data-Driven Decision Making' },
+  ]
+  const evalDims = ['Functional Suitability','Performance Efficiency','Usability','Reliability','Maintainability','Portability']
+  const outcomes = [
+    { Icon: Users,         label: 'Efficient Enrollment' },
+    { Icon: CalendarCheck, label: 'Accurate Scheduling' },
+    { Icon: Award,         label: 'Academic Excellence' },
+  ]
+
+  const colHdr = (label, bg, color) => (
+    <div style={{ background:bg, color, padding:'5px 10px', borderRadius:8, fontSize:13, fontWeight:800, letterSpacing:2, textTransform:'uppercase', textAlign:'center' }}>{label}</div>
+  )
+  const subHdr = (label, color='rgba(255,255,255,0.35)') => (
+    <div style={{ fontSize:10, fontWeight:700, color, textTransform:'uppercase', letterSpacing:1.5, marginTop:3 }}>{label}</div>
+  )
+  const itemRow = (Icon, label, iconColor) => (
+    <div style={{ display:'flex', gap:6, alignItems:'flex-start', padding:'4px 7px', background:'rgba(255,255,255,0.04)', borderRadius:6, border:'1px solid var(--border)' }}>
+      <Icon size={12} style={{ color:iconColor, flexShrink:0, marginTop:2 }} />
+      <span style={{ fontSize:12, color:'var(--text-secondary)', lineHeight:1.4 }}>{label}</span>
+    </div>
+  )
+  const stepRow = (n, Icon, label) => (
+    <div style={{ display:'flex', gap:6, alignItems:'center', padding:'4px 7px', background:'rgba(255,255,255,0.04)', borderRadius:6, border:'1px solid var(--border)' }}>
+      <div style={{ width:16, height:16, borderRadius:4, background:'var(--brand-gradient)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:10, fontWeight:800, color:'#fff', flexShrink:0 }}>{n}</div>
+      <Icon size={11} style={{ color:'var(--g2)', flexShrink:0 }} />
+      <span style={{ fontSize:12, color:'var(--text-secondary)' }}>{label}</span>
+    </div>
+  )
+
   return (
-    <div className="slide-inner" style={{ gap:10 }}>
+    <div className="slide-inner" style={{ gap:8 }}>
       <div className="slide-heading anim-fade-up">Section 03 — Objectives &amp; Framework</div>
       <h2 className="slide-title-h anim-fade-up delay-1">Conceptual Framework — IPO Model</h2>
-      <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
 
-        {/* ── REPLACE THIS BLOCK WITH YOUR FRAMEWORK IMAGE ────────── */}
-        <div className="framework-placeholder">
-          <FileImage size={48} style={{ color:'var(--text-muted)', marginBottom:16, flexShrink:0 }} />
-          <div style={{ fontSize:24, fontWeight:600, color:'var(--text-secondary)', marginBottom:8 }}>
-            Conceptual Framework Image
+      <div className="slide-body anim-fade-up delay-2" style={{ display:'flex', flexDirection:'column', gap:8, overflow:'auto' }}>
+
+        {/* ── Main 3-column IPO ── */}
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1.15fr 1fr', gap:10, flex:1, minHeight:0 }}>
+
+          {/* INPUT */}
+          <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
+            {colHdr('INPUT', '#1e3a5f', '#93c5fd')}
+            {subHdr('A. Data Inputs')}
+            <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+              {dataInputs.map((d,i) => <div key={i}>{itemRow(d.Icon, d.label, 'var(--g2)')}</div>)}
+            </div>
+            {subHdr('B. User Inputs')}
+            <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+              {userInputs.map((u,i) => <div key={i}>{itemRow(u.Icon, u.label, 'var(--g1)')}</div>)}
+            </div>
           </div>
-          <div style={{ fontSize:18, color:'var(--text-muted)', lineHeight:1.6, textAlign:'center' }}>
-            Add your image to <code style={{ background:'var(--bg-card-alt)', padding:'2px 6px', borderRadius:4, fontSize:16 }}>src/assets/framework.png</code>
-            <br />then import and replace this block with an &lt;img&gt; tag.
+
+          {/* PROCESS */}
+          <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
+            {colHdr('PROCESS', 'linear-gradient(135deg,#e4b795,#699acd)', '#fff')}
+            {subHdr('FDD Methodology')}
+            <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+              {fddLinear.map((s,i) => <div key={i}>{stepRow(s.n, s.Icon, s.label)}</div>)}
+            </div>
+            {/* Iterative cycle box */}
+            <div style={{ border:'1px solid rgba(228,183,149,0.45)', borderRadius:8, padding:'6px', marginTop:3 }}>
+              <div style={{ fontSize:10, fontWeight:800, color:'#e4b795', textTransform:'uppercase', letterSpacing:1.5, display:'flex', gap:4, alignItems:'center', marginBottom:4 }}>
+                <RefreshCw size={9} style={{ color:'#e4b795' }} /> Iterative Cycle
+              </div>
+              <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+                {fddIterative.map((s,i) => <div key={i}>{stepRow(s.n, s.Icon, s.label)}</div>)}
+              </div>
+              <div style={{ display:'flex', gap:4, marginTop:4 }}>
+                <div style={{ flex:1, display:'flex', gap:4, padding:'3px 6px', background:'rgba(255,255,255,0.04)', borderRadius:5, border:'1px solid var(--border)', alignItems:'center' }}>
+                  <CheckCircle size={10} style={{ color:'var(--chip-green-t)' }} />
+                  <span style={{ fontSize:11, color:'var(--text-secondary)' }}>Test & Validate</span>
+                </div>
+                <div style={{ flex:1, display:'flex', gap:4, padding:'3px 6px', background:'rgba(255,255,255,0.04)', borderRadius:5, border:'1px solid var(--border)', alignItems:'center' }}>
+                  <RefreshCw size={10} style={{ color:'var(--chip-amber-t)' }} />
+                  <span style={{ fontSize:11, color:'var(--text-secondary)' }}>Feedback & Review</span>
+                </div>
+              </div>
+            </div>
+            {/* Scheduling Engine */}
+            <div style={{ border:'1px dashed rgba(105,154,205,0.6)', borderRadius:8, padding:'7px', marginTop:4 }}>
+              <div style={{ fontSize:10, fontWeight:700, color:'#699acd', textTransform:'uppercase', letterSpacing:1.5, textAlign:'center', marginBottom:5 }}>Generative Scheduling Engine</div>
+              <div style={{ display:'flex', gap:3, justifyContent:'space-between' }}>
+                {engineItems.map((e,i) => (
+                  <div key={i} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:3, padding:'5px 3px', background:'rgba(255,255,255,0.04)', borderRadius:6, flex:1 }}>
+                    <e.Icon size={13} style={{ color:'#699acd' }} />
+                    <span style={{ fontSize:10, color:'var(--text-muted)', textAlign:'center', lineHeight:1.2 }}>{e.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* OUTPUT */}
+          <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
+            {colHdr('OUTPUT', 'rgba(20,83,45,0.7)', '#86efac')}
+            {subHdr('A. System Outputs')}
+            <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+              {sysOutputs.map((s,i) => <div key={i}>{itemRow(s.Icon, s.label, 'var(--g2)')}</div>)}
+            </div>
+            {subHdr('B. Institutional Benefits')}
+            <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+              {benefits.map((b,i) => <div key={i}>{itemRow(b.Icon, b.label, 'var(--g1)')}</div>)}
+            </div>
           </div>
         </div>
-        {/* ─────────────────────────────────────────────────────────── */}
 
-      </div>
-      <div className="anim-fade-up delay-3" style={{ fontSize:18, color:'var(--text-muted)', textAlign:'center', flexShrink:0 }}>
-        ↻ Continuous Evaluation Loop — ISO 25010: Functional Suitability · Performance · Usability · Reliability · Maintainability · Portability
+        {/* ── Bottom strip: Evaluation · Feedback Loop · Expected Outcomes ── */}
+        <div style={{ display:'grid', gridTemplateColumns:'1.6fr 1fr 1fr', gap:10, flexShrink:0 }}>
+
+          {/* ISO Evaluation */}
+          <div style={{ background:'rgba(255,255,255,0.03)', borderRadius:8, padding:'8px 12px', border:'1px solid var(--border)' }}>
+            <div style={{ fontSize:11, fontWeight:800, color:'var(--text-muted)', textTransform:'uppercase', letterSpacing:1, marginBottom:5 }}>Evaluation — ISO/IEC 25010</div>
+            <div style={{ display:'flex', gap:5, flexWrap:'wrap' }}>
+              {evalDims.map((d,i) => (
+                <div key={i} style={{ fontSize:11, color:'var(--text-secondary)', background:'rgba(255,255,255,0.06)', borderRadius:4, padding:'2px 8px', border:'1px solid var(--border)' }}>{d}</div>
+              ))}
+            </div>
+          </div>
+
+          {/* Feedback Loop */}
+          <div style={{ background:'rgba(255,255,255,0.03)', borderRadius:8, padding:'8px 12px', border:'1px dashed rgba(255,255,255,0.15)' }}>
+            <div style={{ fontSize:11, fontWeight:800, color:'var(--chip-amber-t)', textTransform:'uppercase', letterSpacing:1, marginBottom:5, display:'flex', gap:4, alignItems:'center' }}>
+              <RefreshCw size={11} /> Feedback Loop
+            </div>
+            <div style={{ display:'flex', gap:4, flexWrap:'wrap' }}>
+              {['Dean','Students','Registrar','Faculty','System Improvements'].map((r,i) => (
+                <div key={i} style={{ fontSize:11, color:'var(--text-secondary)', background:'rgba(255,255,255,0.06)', borderRadius:4, padding:'2px 7px' }}>{r}</div>
+              ))}
+            </div>
+          </div>
+
+          {/* Expected Outcomes */}
+          <div style={{ background:'rgba(255,255,255,0.03)', borderRadius:8, padding:'8px 12px', border:'1px solid var(--border)' }}>
+            <div style={{ fontSize:11, fontWeight:800, color:'var(--g2)', textTransform:'uppercase', letterSpacing:1, marginBottom:5 }}>Expected Outcomes</div>
+            <div style={{ display:'flex', flexDirection:'column', gap:5 }}>
+              {outcomes.map((o,i) => (
+                <div key={i} style={{ display:'flex', gap:6, alignItems:'center' }}>
+                  <o.Icon size={13} style={{ color:'var(--g2)' }} />
+                  <span style={{ fontSize:13, color:'var(--text-secondary)' }}>{o.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -453,7 +619,7 @@ export function S18_LitStats() {
 
 // ── S20 CSP ENGINE ───────────────────────────────────────────
 export function S20_CSP() {
-  const hard = ['No room double-booking at same time slot','No faculty double-assignment simultaneously','Room capacity ≥ section enrollment','Faculty load ≤ TESDA maximum AND STI Policy limits per semester','Faculty assigned only to qualified subjects']
+  const hard = ['No room double-booking at same time slot','No faculty double-assignment simultaneously','Room capacity ≥ section enrollment','Faculty load ≤ STI Policy limits per semester','Faculty assigned only to qualified subjects']
   const soft = ['Faculty preferred time slots honored where possible','Minimized idle gaps between consecutive sections','Equitable distribution of load across faculty']
   const evidence = [
     { src:'Diallo et al. (2024)', f:'100% hard-constraint satisfaction + 78% soft fulfillment in real-world deployments' },
@@ -771,7 +937,7 @@ export function S45_Regulatory() {
 // ── GENERIC CONTENT PLACEHOLDER ──────────────────────────────
 export function GenericContent({ slide }) {
   const bulletData = {
-    's17': ['30+ verified sources — international and Philippine, 2001–2025','Organized around the 3 specific study objectives','Sources span peer-reviewed journals, institutional publications, and technical documentation','Literature validates: CSP scheduling engines, ETL pipelines, RBAC, dashboards, notifications'],
+    's17': ['30+ verified sources — international and Philippine, 2020–2025','Organized around the 3 specific study objectives','Sources span peer-reviewed journals, institutional publications, and technical documentation','Literature validates: CSP scheduling engines, ETL pipelines, RBAC, dashboards, notifications'],
     's19': ['Leite (2025): 8 SE Asian HEIs — digital platforms show measurable efficiency gains','Mansoor et al. (2022): automated data import is among the highest-impact enrollment features','Martinez & Chen (2023): 84% of systems with real-time slots + notifications + 24/7 access score >4.0','Gkrimpizi et al. (2024): small-to-medium HEIs are most impacted by absence of digital enlistment tools'],
     's21': ['ETL (Mansoor, 2022): automated import reduces entry errors, accelerates pre-enlistment','RBAC (Kim & Park, 2022): tiered role structure reduces unauthorized access risks','Dashboard (Leite, 2025): semester-filtered views used 3.4× more than aggregate views','Notifications (Martinez & Chen, 2023): 5+ events → 41% higher student satisfaction'],
     's23': ['Literature quantifies STI Alaminos costs numerically: 18–22 days, 8–12% conflicts, 62% manual prevalence','Every SEN-GEN feature is validated by peer-reviewed evidence','Benchmark range 4.11–4.55 provides empirically grounded performance standard','RESEARCH GAP: No study has built a purpose-built integrated enlistment AND scheduling system for small-to-medium Philippine private HEIs'],
