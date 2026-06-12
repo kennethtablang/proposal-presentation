@@ -51,10 +51,10 @@ export function S01_Title() {
       </div>
 
       <div className="anim-fade-up delay-2" style={{ borderTop:'1px solid rgba(255,255,255,0.12)', paddingTop:24, marginTop:10, width:'100%', maxWidth:560 }}>
-        <p style={{ fontSize:20, color:'rgba(255,255,255,0.45)', marginBottom:6 }}>Researcher / Developer</p>
+        <p style={{ fontSize:20, color:'rgba(255,255,255,0.45)', marginBottom:6 }}>Proponent</p>
         <p style={{ fontSize:26, fontWeight:600, color:'rgba(255,255,255,0.85)' }}>Kenneth Rey Rallustian Tablang</p>
         <p style={{ fontSize:20, color:'rgba(255,255,255,0.4)', marginTop:6 }}>
-          Adviser: Rochelle Sotelo Lanto, MIT &nbsp;·&nbsp; June 2026
+          June 2026
         </p>
       </div>
     </div>
@@ -134,7 +134,7 @@ export function S04_Context() {
     { Icon: Building2,    label:'Type',               val:'Private Technical-Vocational Institution (TESDA Education Center)' },
     { Icon: MapPin,       label:'Location',            val:'Alaminos City, Pangasinan, Philippines' },
     { Icon: BookOpen,     label:'Programs',            val:'Information Technology and allied programs' },
-    { Icon: Landmark,     label:'Regulatory Bodies',   val:'TESDA (primary accreditor) — but still conforms to CHED standards since most STI campuses are CHED-accredited' },
+    { Icon: Landmark,     label:'Regulatory Bodies',   val:'STI Education Network — but still conforms to CHED standards since most STI campuses are CHED-accredited' },
     { Icon: ClipboardList,label:'Enrollment Method',   val:'Manual SIS paper forms & spreadsheets; apply.sti.edu exists but not actively used — Admission Officer prefers not to use it due to usability problems' },
     { Icon: Calendar,     label:'Scheduling Method',   val:'Spreadsheet-based, manually built; STI Policy governs faculty loading without accounting for TESDA subject loading rules' },
   ]
@@ -167,8 +167,8 @@ export function S06_CoreProblem() {
     { n:2, head:'Issues on Online Registration Portal (apply.sti.edu)',  color:'var(--chip-amber-t)',  bg:'var(--chip-amber)',  body:'Portal exists but Admission Officer opts not to use it: no terms & conditions on submission, student names forced to lowercase, no document/requirement checklist, and no confirmation email.' },
     { n:3, head:'No Document Submission Checklist',                        color:'var(--chip-orange-t)', bg:'var(--chip-orange)', body:'Admission Officer manually verifies required papers (Form 137, birth certificate, good moral certificate, etc.) with no digital checklist — missing documents discovered late, incomplete records risk.' },
     { n:4, head:'No Automated STI Policy Faculty Load Enforcement',         color:'var(--chip-green-t)',  bg:'var(--chip-green)',  body:'STI Alaminos faculty loading is governed by STI corporate policy, but there is no automated system to enforce load limits or detect violations. Manual tracking creates overloading risk and compliance gaps every semester.' },
-    { n:5, head:'Manual Class Schedule Construction',                      color:'var(--chip-purple-t)', bg:'var(--chip-purple)', body:'Spreadsheet-based scheduling with no conflict detection. Double-bookings surface only after student distribution. 18–22 working days per semester scheduling cycle.' },
-    { n:6, head:'No Automated Faculty Loading Report',                     color:'var(--chip-teal-t)',   bg:'var(--chip-teal)',   body:'Consolidated faculty loads tallied manually. No automated generation — undetected overloading, TESDA and STI Policy non-compliance risk.' },
+    { n:5, head:'Manual Class Schedule Construction',                      color:'var(--chip-purple-t)', bg:'var(--chip-purple)', body:'Spreadsheet-based scheduling with no conflict detection. Double-bookings surface only after student distribution. 18–22 working days per semester fixing schedules.' },
+    { n:6, head:'No Automated Faculty Loading Report',                     color:'var(--chip-teal-t)',   bg:'var(--chip-teal)',   body:'Consolidated faculty loads tallied manually. No automated generation — undetected overloading, STI Policy non-compliance risk.' },
     { n:7, head:'No Grid Schedule Views',                                  color:'var(--chip-navy-t)',   bg:'var(--chip-navy)',   body:'No digital grid for Faculty View, Classroom View, or Class Section View. Coordinators read raw spreadsheet rows — no visual conflict detection.' },
     { n:8, head:'Compounding Data Silos & No Notifications',               color:'var(--chip-red-t)',    bg:'var(--chip-red)',    body:'Enrollment, scheduling, faculty load, and room data exist as disconnected files. No audit trail, no automated schedule change notifications — stakeholders rely on word-of-mouth.' },
   ]
@@ -258,7 +258,7 @@ export function S09_ManualSched() {
     { n:3, act:'Draft schedule assembled manually and shared for review',                issue:'18–22 working days avg. scheduling cycle (Chen et al., 2021)' },
     { n:4, act:'Room double-booking discovered → revise. Faculty overload found → revise again', issue:'8–12% conflict density in manual schedules (Veenstra & Vis, 2023)' },
     { n:5, act:'Revisions communicated to all affected parties across disconnected files', issue:'Each conflict round: new notifications, calls, file corrections' },
-    { n:6, act:'Workable but rarely optimal schedule finally published',                 issue:'No TESDA load compliance guarantee; no real-time conflict detection' },
+    { n:6, act:'Workable but rarely optimal schedule finally published',                 issue:'No STI load compliance guarantee; no real-time conflict detection' },
   ]
   return (
     <div className="slide-inner" style={{ gap:10 }}>
@@ -311,7 +311,7 @@ export function S10_Stakeholder() {
 // ── S11 CONSEQUENCES ─────────────────────────────────────────
 export function S11_Consequences() {
   const cols = [
-    { label:'Short-Term',  color:'var(--chip-amber-t)', bg:'var(--chip-amber)', items:['Hidden costs from scheduling conflicts consuming staff time each cycle','Enlistment queues degrade student experience','TESDA load guideline violations — compliance risk','Registrar capacity exceeded at peak periods'] },
+    { label:'Short-Term',  color:'var(--chip-amber-t)', bg:'var(--chip-amber)', items:['Hidden costs from scheduling conflicts consuming staff time each cycle','Enlistment queues degrade student experience','STI load guideline violations — compliance risk','Registrar capacity exceeded at peak periods'] },
     { label:'Medium-Term', color:'var(--chip-red-t)',   bg:'var(--chip-red)',   items:['Risk of falling behind STI institutional quality audit standards','Students face sustained inequitable access','Faculty dissatisfaction and potential attrition','Growing populations exceed sustainable admin capacity'] },
     { label:'Long-Term',   color:'var(--chip-navy-t)',  bg:'var(--chip-navy)', items:['Compounding institutional credibility gap vs peers','No historical data for evidence-based planning','Persistent gap from STI quality benchmarks','Missed opportunity to serve UN SDG 4 mandate'] },
   ]
