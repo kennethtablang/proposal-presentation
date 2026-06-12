@@ -1,7 +1,7 @@
-import { Moon, Sun, FileText, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Moon, Sun, FileText, Maximize2, ChevronLeft, ChevronRight, Monitor } from 'lucide-react'
 import { slides } from '../slides/index.js'
 
-export function TopBar({ current, total, prev, next, dark, setDark, notesOpen, setNotesOpen }) {
+export function TopBar({ current, total, prev, next, dark, setDark, notesOpen, setNotesOpen, onPresenter }) {
   const slide = slides[current]
 
   const handleFullscreen = () => {
@@ -45,6 +45,17 @@ export function TopBar({ current, total, prev, next, dark, setDark, notesOpen, s
           aria-label="Next slide"
         >
           <ChevronRight size={14} />
+        </button>
+
+        <div className="topbar-divider" />
+
+        <button
+          className="icon-btn"
+          onClick={onPresenter}
+          title="Presenter View — opens fullscreen display in a new tab"
+          aria-label="Open presenter view"
+        >
+          <Monitor size={14} />
         </button>
 
         <div className="topbar-divider" />

@@ -3,7 +3,6 @@
 // ─────────────────────────────────────────────────────────────
 import {
   Building2, MapPin, BookOpen, Landmark, ClipboardList, Calendar, Layers, UserPlus, GraduationCap,
-  FileImage,
   Users, User, Settings, List, Code2, CheckCircle, RefreshCw,
   FileCheck, FileText, CalendarCheck, ListChecks, BarChart2, PieChart,
   ScrollText, Target, Zap, TrendingUp, Clock, Award, Pencil, Cpu, Shield, Smile,
@@ -113,7 +112,7 @@ export function S03_Researcher() {
             alt="Kenneth Rey Rallustian Tablang"
             style={{ width:160, height:160, borderRadius:24, objectFit:'cover', boxShadow:'var(--shadow-lg)', border:'3px solid var(--g2)' }}
           />
-          <div style={{ fontSize:20, fontWeight:600, textAlign:'center', lineHeight:1.4 }}>Kenneth Rey<br/>Rallustian Tablang</div>
+          <div style={{ fontSize:20, fontWeight:600, color:'var(--text-muted)', textAlign:'center', lineHeight:1.4 }}>Kenneth Rey<br/>Rallustian Tablang</div>
           <div style={{ fontSize:18, color:'var(--text-muted)', textAlign:'center' }}>Researcher / Developer</div>
         </div>
         <div style={{ flex:1, display:'flex', flexDirection:'column', gap:0 }}>
